@@ -1,1 +1,87 @@
-<p>login-signup works!</p>
+<body>
+    <div class="container_login" *ngIf="isLoginPage">
+        <div class="left">
+            <img src="../assets/loginSignup/logo_small.png">
+            <h3>ONLINE BOOK SHOPPING</h3>
+        </div>
+        <div class="right">
+            <div class="right_container">
+                <div class="title">
+                    <span class="login_title" (click)="goToLogin()">LOGIN</span>
+                    <span class="signup_title" (click)="goToSignup()"> SIGNUP</span>
+                </div>
+                <div class="inputs">
+                    <div class="input1">
+                        <mat-label>Enter Id</mat-label>
+                        <input class="input_id" matInput placeholder="pat@example.com" />
+                    </div>
+                    <div class="input2">
+                        <mat-label>Password</mat-label>
+                        <div class="password_inp">
+                            <input matInput [type]="hide() ? 'password' : 'text'" placeholder="Password*" />
+                            <button mat-icon-button matSuffix (click)="clickEvent($event)"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+                                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </div>
+                        <mat-hint>Forgot Password</mat-hint>
+                    </div>
+                    <button class="loginBtn">Login</button>
+                </div>
+
+                <span class="or ">OR</span>
+                <div class="buttons">
+                    <button class="facebookBtn">Facebook</button>
+                    <button class="googleBtn">Google</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container_signup" *ngIf="!isLoginPage">
+        <div class="left">
+            <img src="../assets/loginSignup/logo_small.png">
+            <h3>ONLINE BOOK SHOPPING</h3>
+        </div>
+        <div class="right">
+            <div class="right_container">
+                <div class="title">
+                    <span class="login_title" (click)="goToLogin()">LOGIN</span>
+                    <span class="signup_title" (click)="goToSignup()"> SIGNUP</span>
+                </div>
+                <div class="inputs">
+                    <div class="input">
+                        <mat-label>Full Name</mat-label>
+                        <input class="input_id" matInput placeholder="Full Name" />
+                    </div>
+                    <div class="input">
+                        <mat-label>Enter Id</mat-label>
+                        <input class="input_id" matInput placeholder="pat@example.com" />
+                    </div>
+                    <div class="input">
+                        <mat-label>Password</mat-label>
+                        <div class="password_inp">
+                            <input matInput [type]="hide() ? 'password' : 'text'" placeholder="Password*" />
+                            <button mat-icon-button matSuffix (click)="clickEvent($event)"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+                                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <mat-label>Mobile No</mat-label>
+                        <input class="input_id" matInput placeholder="Mobile No" />
+                    </div>
+                    <button class="signupBtn">Signup</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <body>
+
+
+        <router-outlet></router-outlet>

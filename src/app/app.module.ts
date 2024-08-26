@@ -11,6 +11,13 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { BookDetailComponent } from './components/home/book-detail/book-detail.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +32,12 @@ import { WishlistComponent } from './components/home/wishlist/wishlist.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

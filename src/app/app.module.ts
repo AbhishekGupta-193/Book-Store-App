@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/home/header/header.component';
@@ -12,12 +12,15 @@ import { BookDetailComponent } from './components/home/book-detail/book-detail.c
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookCardComponent } from './components/home/book-card/book-card.component';
 
+//Angular Modules
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,16 +31,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserProfileComponent,
     BookDetailComponent,
     MyOrderComponent,
-    WishlistComponent
+    WishlistComponent,
+    BookCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatOptionModule,
+    MatSelectModule,
     MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

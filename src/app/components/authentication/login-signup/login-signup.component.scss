@@ -66,6 +66,7 @@ img{
     display: inline-block;
     position: relative;
     color: #878787;
+    cursor: pointer;
   }
 
 .login_title::after {
@@ -87,10 +88,12 @@ img{
     color: black;
     
   }
+  
   .signup_title {
     display: inline-block;
     position: relative;
     color: #878787;
+    cursor: pointer;
   }
 
 .signup_title::after {

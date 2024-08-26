@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/home/header/header.component';
@@ -38,12 +38,15 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     BrowserAnimationsModule,
     MatOptionModule,
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

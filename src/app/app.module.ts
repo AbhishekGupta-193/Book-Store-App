@@ -13,6 +13,7 @@ import { MyOrderComponent } from './components/home/my-order/my-order.component'
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookCardComponent } from './components/home/book-card/book-card.component';
+import {HttpClientModule} from '@angular/common/http';
 
 //Angular Modules
 import { MatOptionModule } from '@angular/material/core';
@@ -44,9 +45,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatCardModule
-
-
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

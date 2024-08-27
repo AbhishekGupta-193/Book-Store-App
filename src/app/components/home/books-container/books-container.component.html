@@ -13,6 +13,8 @@
         </mat-form-field>
     </div>
 </div>
-<div>
-    <app-book-card></app-book-card>
+<div class="Bookstored">
+    <div *ngFor="let i of booksList">
+        <app-book-card [book]="i"></app-book-card>
+    </div>
 </div>

@@ -15,6 +15,7 @@ import { WishlistComponent } from './components/home/wishlist/wishlist.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookCardComponent } from './components/home/book-card/book-card.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SearchPipe } from './pipes/search.pipe';
 
 //Angular Modules
 import { MatOptionModule } from '@angular/material/core';
@@ -23,7 +24,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import { SearchPipe } from './pipes/search.pipe'
+import {MatInputModule} from "@angular/material/input";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { SearchPipe } from './pipes/search.pipe'
     HttpClientModule,
     MatCardModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

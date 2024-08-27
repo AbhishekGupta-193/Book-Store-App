@@ -23,9 +23,15 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+
+
 import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
+import { MyCartComponent } from './components/home/my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     WishlistComponent,
     BookCardComponent,
     SearchPipe,
+    MyCartComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,12 +56,17 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
+
+    MatIconModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
     MatIconModule,
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

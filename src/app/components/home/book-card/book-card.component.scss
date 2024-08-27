@@ -1,28 +1,65 @@
-.container{
-    margin:0px 150px 0px 150px;
-    display: flex;
-    border-radius: 5px;
+.book_widget{
+    width: 233px;
+    height: auto;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    justify-content: center;
 }
 
-mat-card-header{
-    background:#f5f5f5 0% 0% no-repeat padding-box;
-    opacity: 1;
+.img_div{
+    background-color: #F5F5F5;
+    padding: 20px 65px;
 }
-
 img{
-    margin-left: 30px;
-    padding: 5px 15px 10px 15px;
-    width: 114px;
+    width: 100px;
     height: 135px;
 }
 
-mat-card-title{
+.book_details_div{
+    padding-left: 20px;
+}
+.book_title{
+    margin-bottom: 0px;
+}
+span{
+    color: #878787;
+}
+
+.book_rating{
+    color: #ffffff !important;
+    background-color: #388E3C;
+    width: 30px;
+    height: 16px;
+    padding: 2px 4px;
+    margin-right: 5px;
+
+}
+.offer{
+    font-weight: 300 !important;
+    text-decoration:line-through;
+}
+
+.book_title{
     font: normal normal bold 14px/19px Roboto;
     letter-spacing: 0px;
     color: #333333;
     opacity: 1;
 }
 
-mat-card-subtitle{
+.book_author{
     font: normal normal normal 12px/16px Roboto;
 }
+
+.originalPrice{
+     font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color:black;
+    opacity: 1;   
+}
+
+.bookCardContainer{
+    display: flex;
+    margin: 6% 3%;
+}
+
+ 

@@ -2,7 +2,7 @@
 body{
     background-color: #707070;
     // width: 1366px;
-    // height: 768px;
+    // height: 568px;
 }
 
 .container_login{
@@ -12,6 +12,7 @@ body{
     height: 65%;
     margin: auto;
     padding-top: 11.25%;
+    padding-bottom: 11.25%;
 }
 .left{
     // border: 2px solid blue;
@@ -182,6 +183,7 @@ mat-hint{
     // border: 2px solid red;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 8%;
 }
 
 .facebookBtn{
@@ -218,6 +220,7 @@ mat-hint{
     height: 75%;
     margin: auto;
     padding-top: 6.25%;
+    padding-bottom: 6.25%;
 }
 .signupBtn{
     padding: 8px;

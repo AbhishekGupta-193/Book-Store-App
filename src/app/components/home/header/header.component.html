@@ -7,16 +7,15 @@
         <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search for books" class="search-input">
     </div>
     <div class="user-cart">
-        <div>
+        <div [routerLink]="['/header/userProfile']">
             <img src="../../../../assets/Logo/person.svg" alt="User" class="user-avatar">
-            <p class="userName">Profile</p>
+            <p class="userName" >Profile</p>
         </div>
-        <div>
+        <div  [routerLink]="['/header/myCart']">
             <img src="../../../../assets/Logo/cart.svg" alt="Cart" class="cart-icon">
             <p class="cartName">Cart</p>
         </div>
     </div>     
 </div>
 
-<app-books-container></app-books-container>
 <router-outlet></router-outlet>

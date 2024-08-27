@@ -7,12 +7,17 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+import { BooksContainerComponent } from './components/home/books-container/books-container.component';
 
 const routes: Routes = [
   {
     path:'header',
     component:HeaderComponent,
     children:[
+      {
+        path:'',
+        component:BooksContainerComponent
+      },
       {
         path:'userProfile',
         component:UserProfileComponent

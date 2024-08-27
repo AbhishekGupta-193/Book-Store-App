@@ -11,6 +11,7 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { BookDetailComponent } from './components/home/book-detail/book-detail.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookCardComponent } from './components/home/book-card/book-card.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -21,8 +22,6 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,14 +38,13 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    BrowserAnimationsModule,
     MatOptionModule,
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

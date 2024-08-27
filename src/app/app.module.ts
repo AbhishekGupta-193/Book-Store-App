@@ -22,6 +22,9 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { SearchPipe } from './pipes/search.pipe'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,7 @@ import {MatCardModule} from '@angular/material/card';
     MyOrderComponent,
     WishlistComponent,
     BookCardComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

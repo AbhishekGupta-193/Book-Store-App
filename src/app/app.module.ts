@@ -24,6 +24,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
+import { OrderPlacedPageComponent } from './components/home/order-placed-page/order-placed-page.component';
+
+
 
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -45,8 +49,12 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MyOrderComponent,
     WishlistComponent,
     BookCardComponent,
+
+    OrderPlacedPageComponent,
+
     SearchPipe,
     MyCartComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,17 +64,13 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-
     MatIconModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatIconModule,
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

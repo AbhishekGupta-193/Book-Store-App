@@ -61,6 +61,8 @@ export class LoginSignupComponent {
       next: (res: any) => {
         //NAVIGATE TO DASHBOARD AFTER LOGIN
         this.router.navigate(['/header'])
+        console.log("res: ", res.result.accessToken);
+        localStorage.setItem('accessToken', res.result.accessToken);
       },
       error: (err: string) => {
         console.log("err: ", err);

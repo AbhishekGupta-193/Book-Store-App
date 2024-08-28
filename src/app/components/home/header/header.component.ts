@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/BookContainerServices/data.service';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

@@ -11,12 +11,12 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { BookDetailComponent } from './components/home/book-detail/book-detail.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
-
+ 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookCardComponent } from './components/home/book-card/book-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchPipe } from './pipes/search.pipe';
-
+ 
 //Angular Modules
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
@@ -30,8 +30,8 @@ import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
-
-
+ 
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,7 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     OrderPlacedPageComponent,
     SearchPipe,
     MyCartComponent,
-
+ 
   ],
   imports: [
     BrowserModule,
@@ -70,3 +70,4 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

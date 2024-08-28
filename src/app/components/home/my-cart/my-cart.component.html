@@ -2,25 +2,28 @@
 <div class="myCart">
     <div class="container1">
         <div class="title">
-            <h2>My Cart (1)</h2>
+            <h2>My Cart ({{cartItems.length}})</h2>
             <div class="company">
                 <img src="../assets/myCart/location.svg" alt="location">
                 Use Current Location
             </div>
         </div>
-        <div class="content">
+        <div class="content" *ngFor="let item of cartItems">
             <div class="bookImg">
                 <img src="../assets/myCart/Book2.png" alt="book1">
             </div>
             <div class="aboutBook">
                 <div class="bookTitle">
-                    Don't Make Me Think
+                    <!-- Don't Make Me Think -->
+                     {{item.product_id.bookName}}
                 </div>
                 <div class="author">
-                    by Steve King
+                    <!-- by Steve King -->
+                     {{item.product_id.author}}
                 </div>
                 <div class="price">
-                    RS.1500
+                    <!-- RS.1500 -->
+                     Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
                 </div>
                 <div class="buttons">
                     <button class="minusBtn">-</button>
@@ -29,8 +32,8 @@
                     <button class="removeBtn">Remove</button>
                 </div>
             </div>
+            <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
         </div>
-        <button class="continueBtn" (click)="placeOrder()">PLACE ORDER</button>
     </div>
 
     <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
@@ -143,17 +146,20 @@
             </div>
             <div class="aboutBook">
                 <div class="bookTitle">
-                    Don't Make Me Think
+                    <!-- Don't Make Me Think -->
+                     {{itemSelectedForPlacingOrder.product_id.bookName}}
                 </div>
                 <div class="author">
-                    by Steve King
+                    <!-- by Steve King -->
+                     {{itemSelectedForPlacingOrder.product_id.author}}
                 </div>
                 <div class="price">
-                    RS.1500
+                    <!-- RS.1500 -->
+                     Rs.{{itemSelectedForPlacingOrder.product_id.discountPrice}}<s>Rs.{{itemSelectedForPlacingOrder.product_id.price}}</s>
                 </div>
             </div>
+            <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
         </div>
-        <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
     </div>
 </div>
 

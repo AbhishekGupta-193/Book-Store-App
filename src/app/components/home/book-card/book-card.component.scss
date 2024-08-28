@@ -1,0 +1,28 @@
+.container{
+    margin:0px 150px 0px 150px;
+    display: flex;
+    border-radius: 5px;
+}
+
+mat-card-header{
+    background:#f5f5f5 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+img{
+    margin-left: 30px;
+    padding: 5px 15px 10px 15px;
+    width: 114px;
+    height: 135px;
+}
+
+mat-card-title{
+    font: normal normal bold 14px/19px Roboto;
+    letter-spacing: 0px;
+    color: #333333;
+    opacity: 1;
+}
+
+mat-card-subtitle{
+    font: normal normal normal 12px/16px Roboto;
+}

@@ -1,1 +1,18 @@
-<p>books-container works!</p>
+<div class="BookContainerHeading">
+    <div class="sideHeading">
+       <h2>Books</h2>
+       <h3>(128 items)</h3>
+    </div>
+    <div class="filter-tab">
+        <mat-form-field appearance="fill">
+            <mat-label>Sort By relavance</mat-label>
+            <mat-select>
+                <mat-option value="price" >price</mat-option>
+                <mat-option value="rating">rating</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div>
+    <app-book-card></app-book-card>
+</div>

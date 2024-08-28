@@ -11,6 +11,18 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { BookDetailComponent } from './components/home/book-detail/book-detail.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookCardComponent } from './components/home/book-card/book-card.component';
+
+//Angular Modules
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { OrderPlacedPageComponent } from './components/home/order-placed-page/order-placed-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +33,19 @@ import { WishlistComponent } from './components/home/wishlist/wishlist.component
     UserProfileComponent,
     BookDetailComponent,
     MyOrderComponent,
-    WishlistComponent
+    WishlistComponent,
+    BookCardComponent,
+    OrderPlacedPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
-    
+    MatOptionModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

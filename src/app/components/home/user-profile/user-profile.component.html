@@ -1,74 +1,81 @@
 <router-outlet></router-outlet>
 <div class="detailsHeading">
     <h2>Personal Details</h2>
-    <button>Edit</button>
+    <button (click)="toggleEditMode1()" [ngClass]="{'save-button':isEditMode,'edit-button':isEditMode}">
+        {{isEditMode? 'save':'Edit'}}
+    </button>
 </div>
 <div>
     <form class="personalDetailsForm">
         <div class="InputField">
             <mat-label>Full Name</mat-label>
             <mat-form-field class="userName">
-              <input matInput placeholder="Enter Name" name="name">
+              <input matInput placeholder="Enter Name" name="name" [disabled]="!isEditMode" value="poonam Yadav" [(ngModel)]="user.name">
             </mat-form-field>
         </div>
         <div class="InputField">
             <mat-label>Email</mat-label>
             <mat-form-field class="userEmail">
-                <input matInput type="email" placeholder="Ex. pat@example.com" name="email">
+                <input matInput type="email" placeholder="Ex. pat@example.com" [disabled]="!isEditMode" name="email" value="poonam.yadav@gmail.com" [(ngModel)]="user.email"> 
             </mat-form-field>
         </div>
         <div class="InputField">
             <mat-label>Enter your password</mat-label>
             <mat-form-field class="userPaaword">
-                <input matInput type="password" placeholder="Enter Password" name="password"/>
+                <input matInput type="password" placeholder="Enter Password" [disabled]="!isEditMode" name="password" value="123456789" [(ngModel)]="user.password"/>
             </mat-form-field>
         </div>
         <div class="InputField">
             <mat-label>Mobile Number</mat-label>
             <mat-form-field class="userMobileNumber">
-              <input matInput type="text" placeholder="Enter Mobile Number" name="mobileNumber">
+              <input matInput type="text" placeholder="Enter Mobile Number" [disabled]="!isEditMode" name="mobileNumber" value="7569906878" [(ngModel)]="user.phone">
             </mat-form-field>
         </div>
     </form>
 </div>
 <div class="detailsHeading">
     <h2>Address Details</h2>
-    <button class="newAddress">Add New Address</button>
+    <button class="newAddress" (click)="addNewAddress()">Add New Address</button>
 </div>
-<div class="detailsHeading">
-    <h3>1.WORK</h3>
-    <button>Edit</button>
-</div>
-<div>
-    <form>
-        <div class="InputField">
-            <mat-label>Address</mat-label>
-            <mat-form-field>
-                <textarea matInput placeholder="Enter Address"></textarea>
-            </mat-form-field>
-        </div>
-        <div class="CityState">
-            <div class="InputField1">
-                <mat-label>City</mat-label>
+<div class="scrollable-div">
+<div *ngFor="let address of addresses; let i=index" class="address-container">
+    <div class="detailsHeading">
+        <h3>{{i+1}}.{{address.type.toUpperCase()}}</h3>
+        <button (click)="toggleEditMode2()" [ngClass]="{'save-button1':isEditMode,'edit-button':isEditMode}">
+            {{isEditMode? 'save':'Edit'}}
+        </button>
+    </div>
+    <div>
+        <form class="addressDetailsForm">
+            <div class="InputField">
+                <mat-label>Address</mat-label>
                 <mat-form-field>
-                    <input matInput placeholder="Enter City">
+                    <textarea matInput placeholder="Enter Address" [disabled]="!isEditMode" [(ngModel)]="address.Address" name="Address" ></textarea>
                 </mat-form-field>
             </div>
-            <div class="InputField1">
-                <mat-label>State</mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="Enter State">
-                </mat-form-field>
+            <div class="CityState">
+                <div class="InputField1">
+                    <mat-label>City</mat-label>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter City" [disabled]="!isEditMode" [(ngModel)]="address.city" name="city">
+                    </mat-form-field>
+                </div>
+                <div class="InputField1">
+                    <mat-label>State</mat-label>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter State" [disabled]="!isEditMode" [(ngModel)]="address.state" name="state">
+                    </mat-form-field>
+                </div>
             </div>
-        </div>
-        <div class="InputField1">
-            <mat-label>Type</mat-label>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Home</mat-radio-button>
-                <mat-radio-button value="2" class="rb1">Work</mat-radio-button>
-                <mat-radio-button valur="3" class="rb1">Other</mat-radio-button>
-            </mat-radio-group>
-        </div>
-    </form>
+            <div class="InputField1">
+                <mat-label>Type</mat-label>
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="address.type" (change)="onAddressTypeChange(i,$event.value)">
+                    <mat-radio-button value="Home">Home</mat-radio-button>
+                    <mat-radio-button value="Work" class="rb1">Work</mat-radio-button>
+                    <mat-radio-button valur="Other" class="rb1">Other</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </form>
+    </div>  
 </div>
-
+</div>

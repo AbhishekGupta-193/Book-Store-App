@@ -16,6 +16,7 @@
 </div>
 <div class="Bookstored">
     <div *ngFor="let i of filteredProducts | search:searchText">
-        <app-book-card [book]="i"></app-book-card>
+        
+        <app-book-card [book]="i" ></app-book-card>
     </div>
 </div>

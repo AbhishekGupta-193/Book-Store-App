@@ -23,12 +23,14 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { OrderPlacedPageComponent } from './components/home/order-placed-page/order-placed-page.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -42,8 +44,10 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MyOrderComponent,
     WishlistComponent,
     BookCardComponent,
+    OrderPlacedPageComponent,
     SearchPipe,
     MyCartComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -54,11 +58,9 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatIconModule,
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,

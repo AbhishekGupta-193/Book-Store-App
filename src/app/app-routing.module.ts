@@ -55,7 +55,6 @@ const routes: Routes = [
   {
     path:'forgetPassword',
     component:ForgetPasswordComponent
-
   }
 ];
 

@@ -7,7 +7,7 @@
         <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search for books" class="search-input">
     </div>
     <div class="user-cart">
-        <div>
+        <div (click)="toggleLoginCard()">
             <img src="../../../../assets/Logo/person.svg" alt="User" class="user-avatar">
             <p class="userName">Profile</p>
         </div>
@@ -17,6 +17,35 @@
         </div>
     </div>     
 </div>
-<!-- 
-<app-books-container></app-books-container> -->
+
+<div *ngIf="showLoginCard1" class="login-card">
+    <p class="welcome">Welcome</p>
+    <p class="instructions">To access account and manage orders</p>
+    <button (click)="navigateToLogin()" class="login-button">LOGIN/SIGNUP</button>
+    <hr style="color: #9d9d9d;">
+    <div class="options">
+           <div style="display: flex;justify-content: flex-start;">
+           <img src="../../../../assets/Logo/bag.png" alt="My Orders" class="option-icon" style="margin-top: 5px;"><p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">My Orders</p>
+           </div>
+           <div style="display: flex;justify-content: flex-start;">
+            <img src="../../../../assets/Logo/wishlist.png" alt="Wishlist" class="option-icon" style="margin-top: 5px;"> <p  style="color: #9d9d9d; margin-left:10px; margin-top: 5px;">Wishlist</p>
+           </div>
+    </div>
+</div>
+
+<div *ngIf="showLoginCard2" class="login-card">
+    <p class="welcome">Hello Poonam,</p>
+    <div class="options">
+        <div style="display: flex;justify-content: flex-start;">
+            <img src="../../../../assets/Logo/person.png" alt="user" class="option-icon" style="margin-top: 5px;"><p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">Profile</p>
+            </div>
+           <div style="display: flex;justify-content: flex-start;">
+           <img src="../../../../assets/Logo/bag.png" alt="My Orders" class="option-icon" style="margin-top: 5px;"><p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">My Orders</p>
+           </div>
+           <div style="display: flex;justify-content: flex-start;">
+            <img src="../../../../assets/Logo/wishlist.png" alt="Wishlist" class="option-icon" style="margin-top: 5px;"> <p  style="color: #9d9d9d; margin-left:10px; margin-top: 5px;">Wishlist</p>
+           </div>
+    </div>
+    <button (click)="logoutmethod()" class="logout">Logout</button>
+</div>
 <router-outlet></router-outlet>

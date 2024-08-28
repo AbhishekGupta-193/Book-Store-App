@@ -44,6 +44,7 @@
 .user-cart{
     display: flex;
     margin-left: 150px;
+    cursor: pointer;
 }
 
 .user-avatar{
@@ -55,6 +56,7 @@
     padding-bottom: 0;
     background: #A03037 0% 0% no-repeat padding-box;
     opacity: 1;
+    cursor: pointer;
 }
 
 .cart-icon{

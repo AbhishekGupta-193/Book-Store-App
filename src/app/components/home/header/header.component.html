@@ -11,7 +11,7 @@
             <img src="../../../../assets/Logo/person.svg" alt="User" class="user-avatar">
             <p class="userName">Profile</p>
         </div>
-        <div>
+        <div  [routerLink]="['/header/myCart']">
             <img src="../../../../assets/Logo/cart.svg" alt="Cart" class="cart-icon">
             <p class="cartName">Cart</p>
         </div>
@@ -49,3 +49,4 @@
     <button (click)="logoutmethod()" class="logout">Logout</button>
 </div>
 <router-outlet></router-outlet>
+

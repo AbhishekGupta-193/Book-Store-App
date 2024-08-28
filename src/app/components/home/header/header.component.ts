@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/BookContainerServices/data.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-
+export class HeaderComponent implements OnInit{
+  searchText:string='';
+  constructor(private dataService:DataService) {}
+  ngOnInit():void{}
+  onSearch(){
+    console.log(this.searchText);
+    this.dataService.sendData(this.searchText);
+  }
 }

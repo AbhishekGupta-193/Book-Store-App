@@ -4,7 +4,7 @@
    <img src="../../../../assets/Logo/BookStoreLogo.png" alt="Book Store" class="logo">
    <h2 class="heading">Bookstore</h2>
     <div class="search-bar">
-        <input type="text" placeholder="Search for books" class="search-input">
+        <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search for books" class="search-input">
     </div>
     <div class="user-cart">
         <div>
@@ -19,3 +19,4 @@
 </div>
 
 <app-books-container></app-books-container>
+<router-outlet></router-outlet>

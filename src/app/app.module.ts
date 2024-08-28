@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/home/header/header.component';
@@ -49,12 +48,9 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MyOrderComponent,
     WishlistComponent,
     BookCardComponent,
-
     OrderPlacedPageComponent,
-
     SearchPipe,
     MyCartComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -70,7 +66,7 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MatCardModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

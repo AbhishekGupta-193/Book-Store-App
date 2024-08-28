@@ -47,6 +47,11 @@ const routes: Routes = [
     path:'orderplaced',
     component:OrderPlacedPageComponent
 
+  },
+  {
+    path:'wishlist',
+    component:WishlistComponent
+
   }
 ];
 

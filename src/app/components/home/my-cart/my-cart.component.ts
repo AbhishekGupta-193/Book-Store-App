@@ -29,6 +29,6 @@ export class MyCartComponent {
   }
   constructor(private router:Router){}
   checkout(){
-    this.router.navigate(['/forgetPassword'])
+    this.router.navigate(['/header/orderplaced'])
   }
 }

@@ -15,3 +15,4 @@ export class HeaderComponent implements OnInit{
     this.dataService.sendData(this.searchText);
   }
 }
+

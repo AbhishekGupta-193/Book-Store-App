@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-cart',
@@ -21,5 +22,13 @@ export class MyCartComponent {
   changeAddressDetailsVisibility(){
     this.addressView1=false;
     this.addressView2=true;
+  }
+  placeOrder(){
+    this.addressView1=false;
+    this.addressView2=true;
+  }
+  constructor(private router:Router){}
+  checkout(){
+    this.router.navigate(['/forgetPassword'])
   }
 }

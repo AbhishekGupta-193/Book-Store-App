@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <button class="continueBtn">PLACE ORDER</button>
+        <button class="continueBtn" (click)="placeOrder()">PLACE ORDER</button>
     </div>
 
     <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
@@ -152,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <button class="continueBtn">CHECKOUT</button>
+        <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
     </div>
 </div>
 

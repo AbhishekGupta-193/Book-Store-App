@@ -1,4 +1,5 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,EventEmitter,Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-card',
@@ -7,6 +8,7 @@ import { Component,Input, OnInit } from '@angular/core';
 })
 export class BookCardComponent implements OnInit {
   @Input() book:any;
+  @Output() navToCardDetail=new EventEmitter()
   imagePaths:string[]=[
     '../../../../assets/Books/Book1.png',
     '../../../../assets/Books/Book2.png',
@@ -19,12 +21,19 @@ export class BookCardComponent implements OnInit {
     '../../../../assets/Books/Book9.png',
   ];
   selectedImagePath:string = '';
-  constructor() { }
+  constructor(private router:Router) { }
   ngOnInit(): void { 
     this.selectedImagePath = this.getRandomImagePath();
+    
    }
    getRandomImagePath(){
      let index = Math.floor(Math.random()*this.imagePaths.length);
      return this.imagePaths[index];
+   }
+   handleClick(){
+    // this.router.navigate(['/header/bookDetail'], { state: { book: this.book } })
+    this.book['img']=this.selectedImagePath
+    this.navToCardDetail.emit(this.book)
+    
    }
 }

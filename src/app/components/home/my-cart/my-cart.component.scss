@@ -29,7 +29,20 @@
     margin: 5%;
     display: flex;
 }
-
+.placeOrderBtn{
+    display: flex;
+    margin-left: 39%;
+    height: 40%;
+    border: none;
+    border-radius: 2px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #3371B5;
+    cursor: pointer;
+    margin-top: 12%;
+}
 .bookImg img{
     // border: 2px solid red;
     height: 75%;
@@ -46,6 +59,12 @@
     color: #DCDCDC;
     margin-bottom: 4%;
 
+}
+s{
+    color: #DCDCDC;
+    margin-left: 4%;
+    font-weight: 500;
+    font-size: 11px;
 }
 .price{
     font-weight: 600;

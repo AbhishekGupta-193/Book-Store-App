@@ -31,8 +31,8 @@ import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
 import { FooterComponent } from './components/home/footer/footer.component';
- 
- 
+import { SharedDataService } from './services/SharedData/shared-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +68,7 @@ import { FooterComponent } from './components/home/footer/footer.component';
     FormsModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

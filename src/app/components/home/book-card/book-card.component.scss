@@ -7,6 +7,10 @@
 }
 
 .img_div{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
     background-color: #F5F5F5;
     padding: 20px 65px;
 }
@@ -61,5 +65,29 @@ span{
     display: flex;
     margin: 6% 3%;
 }
+
+.bookCardContainer:not(:hover){
+    .hoverElement{
+        display: none;
+    }
+    
+}
+.bookCardContainer:hover{
+    .img_div{
+        padding-bottom: 0;
+    }
+    .hoverElement{
+        position: relative;
+        top: 10px;
+        // left: 30%;
+        background-color: #5d5c5c;
+        width: fit-content;
+        padding: 0 2px;
+        color: white;
+        font-size: 11px;
+        
+    }
+}
+
 
  

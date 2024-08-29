@@ -32,7 +32,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 import { SharedDataService } from './services/SharedData/shared-data.service';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +66,8 @@ import { SharedDataService } from './services/SharedData/shared-data.service';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatPaginatorModule
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]

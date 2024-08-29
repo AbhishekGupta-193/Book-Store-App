@@ -10,7 +10,7 @@
      <div class="wish-card-content">
       <mat-card-header>
         <div mat-card-avatar class="book-image">
-           <img src="../../../../assets/Books/Book1.png" height=90px width=70px>
+           <img [src]="getRandomImagePath()" height=90px width=70px>
         </div>
         <mat-card-title>{{i.product_id?.bookName}}</mat-card-title>
         <mat-card-subtitle>{{i.product_id?.author}}<p class="price" style="color: black; margin-top: 10px;"><b>{{i.product_id?.discountPrice}}</b><s>{{i.product_id?.price}}</s></p></mat-card-subtitle>

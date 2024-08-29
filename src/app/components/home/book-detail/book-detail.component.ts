@@ -10,7 +10,8 @@ import { WishListService } from 'src/app/services/WishlistServices/wish-list.ser
   styleUrls: ['./book-detail.component.scss']
 })
 export class BookDetailComponent implements OnInit {
-  book: any
+  showPopupMessage: boolean = false;
+  book: any;
   dataToSend={
     "comment":'',
     "rating":0
@@ -79,9 +80,11 @@ export class BookDetailComponent implements OnInit {
     console.log('this is a book',this.book._id);
     this.wishlistservice.addWishList('bookstore_user/add_wish_list/'+this.book._id).subscribe({
       next:(res:any)=>{
-        console.log("WishList Added");
         console.log(res);
-        console.log("wishlist completed");
+        this.showPopupMessage = true;
+        setTimeout(() => {
+          this.showPopupMessage = false;
+        }, 1000);
       },
       error:(err:any)=>{
         console.log(err);

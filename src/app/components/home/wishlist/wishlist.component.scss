@@ -1,3 +1,74 @@
+
+.wishListHeading{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #E4E4E4;
+    width: 76.5%;
+    padding: 20px 10px 10px 0;
+    padding-left: 3%;
+    border-radius: 5px;
+}
+
+.wish-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.wish-card {
+  width: 80%;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.wish-card-content {
+   padding: 20px;
+}
+ 
+.book-image {
+  background-size: cover;
+  height: 80px;
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+ 
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+mat-form-field {
+  width: 300px;
+}
+ 
+mat-card-title,mat-card-subtitle{
+  margin: 0;
+}
+
+.price p{
+  margin-top: 30px;
+}
+ 
+mat-card-content p {
+  margin: 5px 0;
+}
+
+s{
+    padding-left: 8px;
+    color: #9D9D9D;
+}
+
+mat-icon{
+    cursor: pointer;
+    color: #9D9D9D;
+    margin-left: 60%;
+}
+ 
+
 // When wishlist is empty
 
 .main-container{
@@ -84,5 +155,79 @@ button{
         padding-left: 8px;
         color: #9D9D9D;
     }
+
+
+//LATEST STYLINGS
+
+.wishListHeading{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #E4E4E4;
+    width: 76.5%;
+    padding: 20px 10px 10px 0;
+    padding-left: 3%;
+    border-radius: 5px;
+}
+
+.wish-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.wish-card {
+  width: 80%;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.wish-card-content {
+   padding: 20px;
+}
+ 
+.book-image {
+  background-size: cover;
+  height: 80px;
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+ 
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+mat-form-field {
+  width: 300px;
+}
+ 
+mat-card-title,mat-card-subtitle{
+  margin: 0;
+}
+
+.price p{
+  margin-top: 30px;
+}
+ 
+mat-card-content p {
+  margin: 5px 0;
+}
+
+s{
+    padding-left: 8px;
+    color: #9D9D9D;
+}
+
+mat-icon{
+    cursor: pointer;
+    color: #9D9D9D;
+    margin-left: 60%;
+}
+ 
    
+
 

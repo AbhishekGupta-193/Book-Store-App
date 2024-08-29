@@ -33,3 +33,28 @@ mat-form-field {
     margin: 30px;
 }
 
+//PAGINATOR STYLES
+
+.paginator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .paginator-button {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+  
+  .paginator-container span {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .paginator-container span.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

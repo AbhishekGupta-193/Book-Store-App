@@ -15,6 +15,7 @@ interface WishListItem{
 })
 export class WishlistComponent implements OnInit {
 
+  product_id !: '';
   isEmpty:boolean=false;
   wishList:WishListItem[]= [];
   constructor(private wishListService:WishListService) { }
@@ -28,5 +29,17 @@ export class WishlistComponent implements OnInit {
         console.log(err);
       }
      });
+  }
+
+  deleteWishListItem(book_id:any){
+    this.wishListService.deleteWishList('bookstore_user/remove_wishlist_item/'+book_id).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        window.location.reload();
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    });
   }
 }

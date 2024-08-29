@@ -15,4 +15,10 @@ export class HttpWishListService implements OnInit {
   addWishList(url:string,token:boolean,headers:any){
     return this.httpClient.post(this.baseUrl+url,{},token&&headers);
   }
+
+  deleteWishList(url:string,token:boolean,headers:any){
+    return this.httpClient.delete(this.baseUrl+url,token&&headers);
+  }
+
+
 }

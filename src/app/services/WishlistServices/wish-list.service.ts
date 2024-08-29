@@ -14,10 +14,19 @@ export class WishListService implements OnInit {
     return this.httpWishList.getWishList(url,true,{headers:myHeaders});
   }
 
+
   addWishList(url:string){
     const token = localStorage.getItem('accessToken');
     const myHeaders = new Headers();
     myHeaders.append('x-access-token', `${token}`);
     return this.httpWishList.addWishList(url,true,{headers:myHeaders});
+  }
+
+  //keshav
+  deleteWishList(url:string){
+    const token = localStorage.getItem('accessToken');
+    const myHeaders = new Headers();
+    myHeaders.append('x-access-token', `${token}`);
+    return this.httpWishList.deleteWishList(url,true,{headers:myHeaders});
   }
 }

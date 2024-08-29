@@ -1,13 +1,13 @@
 import { Component ,OnInit} from '@angular/core';
 import { WishListService } from 'src/app/services/WishlistServices/wish-list.service';
-
+ 
 interface WishListItem{
   product_id: any;
   price: any;
   discountPrice: any;
   bookName: any;
 }
-
+ 
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',

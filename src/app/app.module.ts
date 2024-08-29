@@ -30,8 +30,8 @@ import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+import { FooterComponent } from './components/home/footer/footer.component';
 import { SharedDataService } from './services/SharedData/shared-data.service';
-
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { SharedDataService } from './services/SharedData/shared-data.service';
     OrderPlacedPageComponent,
     SearchPipe,
     MyCartComponent,
+    FooterComponent,
  
   ],
   imports: [

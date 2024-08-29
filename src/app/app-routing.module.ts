@@ -40,6 +40,10 @@ const routes: Routes = [
       {
         path:'bookDetail',
         component:BookDetailComponent
+      },
+      {
+        path:'orderplaced',
+        component:OrderPlacedPageComponent
       }
     ]
 
@@ -51,12 +55,6 @@ const routes: Routes = [
   {
     path:'forgetPassword',
     component:ForgetPasswordComponent
-
-  },
-  {
-    path:'orderplaced',
-    component:OrderPlacedPageComponent
-
   }
 ];
 

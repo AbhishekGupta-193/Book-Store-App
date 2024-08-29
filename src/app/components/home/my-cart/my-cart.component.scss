@@ -31,7 +31,7 @@
 }
 .placeOrderBtn{
     display: flex;
-    margin-left: 39%;
+    margin-left: 38%;
     height: 40%;
     border: none;
     border-radius: 2px;
@@ -264,4 +264,19 @@ s{
 }
 .closedView h3{
     font-weight: 500;
+}
+
+.continueBtn{
+    display: flex;
+    margin-left: 39%;
+    height: 40%;
+    border: none;
+    border-radius: 2px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #3371B5;
+    cursor: pointer;
+    margin-top: 12%;
 }

@@ -1,6 +1,6 @@
 <!-- When Wishlist is not empty -->
  
-<div class="wishListHeading">
+<div class="wishListHeading" *ngIf="!isEmpty">
   <p>My WishList(01)</p>
 </div>
 <div *ngFor="let i of wishList">
@@ -23,7 +23,7 @@
  
 <!-- When Wishlist is empty -->
  
-<div class="main-container">
+<div class="main-container" *ngIf="isEmpty">
   <div class="msg-container">
     <div>
       <span class="topmsg">PLEASE LOG IN</span>
@@ -43,7 +43,7 @@
 </div>
  
  
- 
+<app-footer></app-footer>
  
 <router-outlet></router-outlet>
  

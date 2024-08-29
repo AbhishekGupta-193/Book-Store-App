@@ -14,6 +14,8 @@ interface WishListItem{
   styleUrls: ['./wishlist.component.scss']
 })
 export class WishlistComponent implements OnInit {
+
+  isEmpty:boolean=false;
   wishList:WishListItem[]= [];
   constructor(private wishListService:WishListService) { }
   ngOnInit(): void {

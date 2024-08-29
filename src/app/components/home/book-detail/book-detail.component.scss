@@ -243,3 +243,18 @@ hr{
     }
     
 }
+
+.reviewComments{
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: hidden;
+    -ms-overflow-style: none;
+}
+ 
+.reviewComments::-webkit-scrollbar {
+    display: none;
+}
+.feedback input{
+    outline: none;
+}

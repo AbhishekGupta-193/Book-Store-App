@@ -12,4 +12,7 @@ export class HttpWishListService implements OnInit {
   getWishList(url:string,token:boolean,headers:any){
     return this.httpClient.get(this.baseUrl+url,token&&headers);
   }
+  addWishList(url:string,token:boolean,headers:any){
+    return this.httpClient.post(this.baseUrl+url,{},token&&headers);
+  }
 }

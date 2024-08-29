@@ -10,6 +10,10 @@ import { SharedDataService } from 'src/app/services/SharedData/shared-data.servi
 })
 export class BookDetailComponent implements OnInit {
   book: any
+  dataToSend={
+    "comment":'',
+    "rating":0
+  }
   feedBackStars = ["#707070", "#707070", "#707070", "#707070", "#707070", "#707070"]
 
 
@@ -40,15 +44,32 @@ export class BookDetailComponent implements OnInit {
   }
 
   handleStarsClick(id: any) {
+    this.dataToSend.rating=id
     this.feedBackStars = this.feedBackStars.map((feedBackStar) => {
-      return feedBackStar = "#707070"
+      return "#707070"
     })
     this.feedBackStars = this.feedBackStars.map((feedBackStar, index) => {
       if (index <= id) {
-        return feedBackStar = "#FFCE00"
+        return "#FFCE00"
       }
       else{
         return feedBackStar="#707070"
+      }
+    })
+  }
+
+  handleSubmit(){
+    console.log(this.dataToSend)
+    this.http.postFeedback(this.dataToSend,this.book._id).subscribe({
+      next:(res)=>{
+        console.log(res)
+        this.ngOnInit()
+        this.dataToSend.rating=0
+        this.dataToSend.comment=''
+        this.handleStarsClick(0)
+      },
+      error:(err)=>{
+        console.log(err)
       }
     })
   }

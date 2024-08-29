@@ -1,5 +1,7 @@
-<router-outlet></router-outlet>
+<div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">Profile</span>
+</div>
 <div class="detailsHeading">
+    
     <h2>Personal Details</h2>
     <button (click)="toggleEditMode1()" [ngClass]="{'save-button':isEditMode,'edit-button':isEditMode}">
         {{isEditMode? 'save':'Edit'}}

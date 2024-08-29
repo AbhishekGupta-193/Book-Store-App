@@ -1,6 +1,18 @@
+.nav {
+    margin-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .back {
+        color: #9D9D9D;
+    }
+   .back{
+    cursor: pointer;
+   }
+}
 .container1{
     width:70%;
-    margin-top: 5%;
+    
     margin-left: 10%;
     border: 1px solid #DCDCDC;
 }

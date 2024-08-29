@@ -33,6 +33,9 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 import { SharedDataService } from './services/SharedData/shared-data.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatMenuModule} from '@angular/material/menu';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +70,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     FormsModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatMenuModule
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]

@@ -87,6 +87,7 @@
 .mainComponentLeft {
     display: flex;
     flex-direction: column;
+
     flex: 1;
 }
 
@@ -95,6 +96,8 @@
     flex-direction: column;
     flex: 2;
     padding-left: 100px;
+    justify-content: center;
+    
 
 }
 
@@ -292,3 +295,31 @@ hr {
 .feedback input {
     outline: none;
 }
+
+@media screen and (max-width: 885px) {
+    // .main{
+    //     flex-direction: column;
+    // }
+    .mainPart{
+        flex-direction: column;
+
+    }
+    .mainComponent{
+        padding-left: 0px;
+    }
+    
+  }
+
+  @media screen and (max-width: 544px) {
+    .actions{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+    }
+    .action{
+        width: 100%;
+    }
+
+  }

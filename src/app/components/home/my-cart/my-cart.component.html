@@ -1,9 +1,8 @@
-
 <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
 </div>
 <div class="myCart">
     <div class="container1">
-        
+
         <div class="title">
             <h2>My Cart ({{cartItems.length}})</h2>
             <div class="company">
@@ -18,21 +17,21 @@
             <div class="aboutBook">
                 <div class="bookTitle">
                     <!-- Don't Make Me Think -->
-                     {{item.product_id.bookName}}
+                    {{item.product_id.bookName}}
                 </div>
                 <div class="author">
                     <!-- by Steve King -->
-                     {{item.product_id.author}}
+                    {{item.product_id.author}}
                 </div>
                 <div class="price">
                     <!-- RS.1500 -->
-                     Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
+                    Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
                 </div>
                 <div class="buttons">
-                    <button class="minusBtn">-</button>
-                    <button class="countBtn">1</button>
-                    <button class="plusBtn">+</button>
-                    <button class="removeBtn">Remove</button>
+                    <button class="minusBtn" (click)="decreaseQuantity(item)">-</button>
+                    <button class="countBtn">{{item.quantityToBuy}}</button>
+                    <button class="plusBtn" (click)="increaseQuantity(item)">+</button>
+                    <button class="removeBtn" (click)="deleteFromMyCart(item)">Remove</button>
                 </div>
             </div>
             <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
@@ -150,15 +149,15 @@
             <div class="aboutBook">
                 <div class="bookTitle">
                     <!-- Don't Make Me Think -->
-                     {{itemSelectedForPlacingOrder.product_id.bookName}}
+                    {{itemSelectedForPlacingOrder.product_id.bookName}}
                 </div>
                 <div class="author">
                     <!-- by Steve King -->
-                     {{itemSelectedForPlacingOrder.product_id.author}}
+                    {{itemSelectedForPlacingOrder.product_id.author}}
                 </div>
                 <div class="price">
                     <!-- RS.1500 -->
-                     Rs.{{itemSelectedForPlacingOrder.product_id.discountPrice}}<s>Rs.{{itemSelectedForPlacingOrder.product_id.price}}</s>
+                    Rs.{{itemSelectedForPlacingOrder.product_id.discountPrice}}<s>Rs.{{itemSelectedForPlacingOrder.product_id.price}}</s>
                 </div>
             </div>
             <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
@@ -171,4 +170,3 @@
 
 
 <router-outlet></router-outlet>
-

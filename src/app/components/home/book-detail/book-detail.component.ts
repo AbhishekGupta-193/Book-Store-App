@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpBookService } from 'src/app/services/BookContainerServices/http-book.service';
 import { SharedDataService } from 'src/app/services/SharedData/shared-data.service';
 import { WishListService } from 'src/app/services/WishlistServices/wish-list.service';
-
+import { CartService } from 'src/app/services/cartServices/cart.service';
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -18,7 +18,7 @@ export class BookDetailComponent implements OnInit {
   feedBackStars = ["#707070", "#707070", "#707070", "#707070", "#707070", "#707070"]
 
 
-  constructor(private router: Router, private sharedData: SharedDataService, private http: HttpBookService,private wishlistservice:WishListService) { }
+  constructor(private router: Router, private sharedData: SharedDataService, private http: HttpBookService,private wishlistservice:WishListService,private cartService:CartService) { }
   ngOnInit(): void {
     this.book = this.sharedData.getBook();
     console.log('this is a book',this.book._id);
@@ -82,6 +82,18 @@ export class BookDetailComponent implements OnInit {
         console.log("WishList Added");
         console.log(res);
         console.log("wishlist completed");
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    })
+   }
+
+   addToBag(){
+    this.cartService.addToCart('bookstore_user/add_cart_item/'+this.book._id).subscribe({
+      next:(res:any)=>{
+        console.log("Added to Cart");
+        console.log(res);
       },
       error:(err:any)=>{
         console.log(err);

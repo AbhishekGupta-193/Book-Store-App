@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class BookCardComponent implements OnInit {
   @Input() book:any;
   @Output() navToCardDetail=new EventEmitter()
+  outOfStock=false
   imagePaths:string[]=[
     '../../../../assets/Books/Book1.png',
     '../../../../assets/Books/Book2.png',
@@ -24,6 +25,9 @@ export class BookCardComponent implements OnInit {
   constructor(private router:Router) { }
   ngOnInit(): void { 
     this.selectedImagePath = this.getRandomImagePath();
+    if(this.book.quantity<=5){
+      this.outOfStock=true
+    }
     
    }
    getRandomImagePath(){

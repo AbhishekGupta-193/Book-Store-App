@@ -2,6 +2,10 @@ body {
     background-color: #707070;
 
     margin: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
     // width: 1366px;
     // height: 568px;
@@ -13,8 +17,7 @@ body {
     width: 55%;
     height: 65%;
     margin: auto;
-    padding-top: 11.25%;
-    padding-bottom: 11.25%;
+    
 }
 
 .left {
@@ -54,11 +57,16 @@ img {
     height: 100%;
     width: 52%;
     background-color: white;
+    display: flex;
+    height: max-content;
 }
 
 .right_container {
     width: 75%;
     margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     // border: 2px solid red;
 }
 

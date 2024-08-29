@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class UserProfileComponent {
    isEditMode=false;
    user={
-      name:'Hanuman',
-      email:'Hanuman.boddu@gmail.com',
-      phone:'7569906878',
-      password:'Hanuman@123'
+      name:'Poonam Yadav',
+      email:'saragadam.neeraja@bridgelabz.com',
+      phone:'9876567876',
+      password:'Pass@123'
    }
 
    addresses=[

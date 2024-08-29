@@ -30,8 +30,9 @@ import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
- 
- 
+import { SharedDataService } from './services/SharedData/shared-data.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,7 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     FormsModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BookService } from 'src/app/services/BookContainerServices/book.service';
 import { DataService } from 'src/app/services/BookContainerServices/data.service';
+import { SharedDataService } from 'src/app/services/SharedData/shared-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books-container',
@@ -13,7 +15,7 @@ export class BooksContainerComponent implements OnInit {
   booksList:any[] = [];
   filteredProducts:any[] = [];  
   @Input() searchText:any;
-  constructor(private bookService:BookService,private dataService:DataService) { }
+  constructor(private bookService:BookService,private dataService:DataService,private sharedData:SharedDataService,private router:Router) { }
   ngOnInit(): void {
     this.bookService.getBooksAPI('/bookstore_user/get/book').subscribe({
       next:(response:any)=>{
@@ -36,5 +38,12 @@ export class BooksContainerComponent implements OnInit {
     this.filteredProducts.sort((a:any,b:any)=>{
       return a[filter]-b[filter];
     });
+  }
+  navToCardDetail(book:any){
+    
+    this.sharedData.setBook(book)
+    this.router.navigate(['/header/bookDetail'])
+
+
   }
 }

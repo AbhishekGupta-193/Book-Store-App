@@ -1,8 +1,10 @@
+
 <div class="container">
    <div class="bookCardContainer">
     <div class="book_widget">
         <div class="img_div">
-           <img [src]="selectedImagePath" alt="bookImage" >
+
+           <img [src]="selectedImagePath" [routerLink]="['/header/bookDetail']" alt="bookImage" >
         </div>
         <div class="book_details_div">
            <h2 class="book_title">{{book.bookName}} </h2>

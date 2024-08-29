@@ -1,0 +1,267 @@
+.container1{
+    width:70%;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: 1px solid #DCDCDC;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+    // border: 2px solid red;
+}
+.title h2{
+    font-weight:600 ;
+}
+.company{
+    display: flex;
+    border: 1px solid #DCDCDC;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 1px;
+    font-weight: 500;
+}
+.company img{
+    height: 60%;
+}
+.content{
+    margin: 5%;
+    display: flex;
+}
+.placeOrderBtn{
+    display: flex;
+    margin-left: 39%;
+    height: 40%;
+    border: none;
+    border-radius: 2px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #3371B5;
+    cursor: pointer;
+    margin-top: 12%;
+}
+.bookImg img{
+    // border: 2px solid red;
+    height: 75%;
+}
+.aboutBook{
+    margin-left: 4%;
+    // border: 2px solid red;
+}
+.bookTitle{
+    font-weight: 500;
+    margin-bottom: 4%;
+}
+.author{
+    color: #DCDCDC;
+    margin-bottom: 4%;
+
+}
+s{
+    color: #DCDCDC;
+    margin-left: 4%;
+    font-weight: 500;
+    font-size: 11px;
+}
+.price{
+    font-weight: 600;
+    margin-bottom: 20%;
+}
+.buttons{
+    display: flex;
+    width: 100%;
+    // border: 2px solid red;
+    justify-content: space-between;
+}
+.minusBtn{
+    border-radius: 50%;
+    border: 1px solid #DBDBDB;
+    font-size: 20px;
+    color: #DBDBDB;
+    cursor: pointer;
+}
+.countBtn{
+    border: 1px solid #DBDBDB;
+    padding:3px 15px 3px 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.plusBtn{
+    border-radius: 50%;
+    border: 1px solid #DBDBDB;
+    cursor: pointer;
+
+}
+.removeBtn{
+    border: none;
+    background-color: white;
+    margin-left: 15%;
+    cursor: pointer;
+}
+
+
+.container2{
+    width:70%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border: 1px solid #DCDCDC;
+}
+.title h3{
+    font-weight: 500;
+    font-size: large;
+}
+.title button{
+    border: none;
+    border: 2px solid#A03037;
+    border-radius: 2px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #A03037;
+    background-color: white;
+    font-weight: 500;
+}
+.userDetail{
+    // border: 2px solid red;
+    margin: 5%;
+    margin-left: 10%;
+    display: flex;
+}
+.fullName{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    font-weight: 500;
+}
+.fullName input{
+    padding: 10px;
+    padding-right: 30px;
+
+}
+.mobileNo{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+.mobileNo input{
+    padding: 10px;
+    padding-right: 30px;
+}
+
+
+.workAddress{
+    // border: 2px solid red;
+    margin: 5%;
+}
+.type{
+    margin-left: 3%;
+
+}
+.type label{
+    font-weight: 600;
+    font-size: large;
+
+}
+.type button{
+    border: none;
+    background-color: white;
+    color: #A03037;
+    font-weight: 600;
+    margin-left: 3%;
+}
+.addressInp{
+    // border: 2px solid blue;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.addressInp label{
+    font-weight: 600;
+}
+.addressInp textarea{
+    height: 75px;
+    background-color: #F5F5F5;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+}
+.regionInp{
+    // border: 2px solid blue;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+.cityInp{
+    display: flex;
+    flex-direction: column;
+    margin-right: 7%;
+}
+.cityInp label{
+    font-weight: 500;
+
+}
+.cityInp input{
+    padding: 10px;
+    padding-right: 35px;
+    background-color: #F5F5F5;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+
+}
+.stateInp{
+    display: flex;
+    flex-direction: column;
+}
+.stateInp label{
+    font-weight: 500;
+}
+.stateInp input{
+    padding: 10px;
+    padding-right: 35px;
+    background-color: #F5F5F5;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+}
+
+
+
+.homeAddress{
+    // border: 2px solid red;
+    margin: 5%;
+    margin-bottom: 2%;
+}
+.continueBtn{
+    border: none;
+    border-radius: 2px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #3371B5;
+    margin-left: 75%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+
+.container3{
+    width:70%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border: 1px solid #DCDCDC;
+    cursor: pointer;
+}
+
+.closedView{
+    margin: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.closedView h3{
+    font-weight: 500;
+}

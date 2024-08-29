@@ -1,5 +1,6 @@
 .bookDetail{
     margin-left: 100px;
+    margin-right: 100px;
 }
 
 .nav {
@@ -9,6 +10,9 @@
     .back {
         color: #9D9D9D;
     }
+   .back{
+    cursor: pointer;
+   }
 }
 
 .main {
@@ -37,6 +41,7 @@
 
 .mainPart {
     display: flex;
+    width: 100%;
    
     .actions{
         display: flex;
@@ -54,6 +59,8 @@
             background-color: #A03037;
         }
         .wishlist{
+            display: flex;
+            align-items: center;
             background-color: #333333;
             display: flex;
             gap: 5px;
@@ -67,9 +74,18 @@
     border: 1px solid #D1D1D1;
     border-radius: 1px 1px 1px 0px;
 }
+
+.mainComponentLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .mainComponent{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
     padding-left: 100px;
-    padding-right: 100px;
+
 }
 hr{
     border: 1px solid #9D9D9D;
@@ -96,13 +112,14 @@ hr{
         gap: 5px;
 
         .stars {
-            display: flex;
+            display: flex !important;
             align-items: center;
             border-radius: 1px;
             width: fit-content;
             background-color: #388E3C;
             color: #FFFFFF;
             padding: 0 5px;
+            
         }
         .count {
             color: #878787
@@ -154,10 +171,12 @@ hr{
         background-color: #F5F5F5;
         border-radius: 2px;
         padding: 20px;
+        width: 100%;
         .title{
             font-size: 12px;
         }
         .stars{
+            display: flex;
             margin:10px 0px
         }
         .feedback{
@@ -167,7 +186,9 @@ hr{
             padding-bottom: 25px;
             color: #707070;
             input{
-                border:none
+                border:none;
+                width: 100%;
+                padding: 5px 2px;
             }
             margin-bottom: 10px;
         }
@@ -205,6 +226,9 @@ hr{
                 align-items: center;
                 // flex:1
                 
+            }
+            .stars{
+                display: flex;
             }
             .name{
                 font-size:15px;

@@ -1,18 +1,23 @@
 <div class="bookDetail">
-    <div class="nav"><span class="back">Home</span> / <span class="current">Book(01)</span></div>
+    <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">Book(01)</span>
+    </div>
     <div class="main">
         <div class="sideImages">
-            <div class="sideImage selected"><img src="../../../../assets/bookDetail/Image 1.png" alt=""></div>
+            <div class="sideImage selected"><img [src]="book.img" width="35px" alt=""></div>
             <div class="sideImage"><img src="../../../../assets/bookDetail/Image 46.png" alt=""></div>
         </div>
         <div class="mainPart">
-            <div>
+            <div class="mainComponentLeft">
                 <div class="mainImage">
-                    <img src="../../../../assets/bookDetail/Image 11.png" alt="">
+                    <img [src]="book.img" alt="" width="282px">
                 </div>
                 <div class="actions">
                     <div class="action addToCart">ADD TO BAG</div>
-                    <div class="action wishlist" ><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="m480-144-50-45q-100-89-165-152.5t-102.5-113Q125-504 110.5-545T96-629q0-89 61-150t150-61q49 0 95 21t78 59q32-38 78-59t95-21q89 0 150 61t61 150q0 43-14 83t-51.5 89q-37.5 49-103 113.5T528-187l-48 43Z"/></svg><span>WISHLIST</span></div>
+                    <div class="action wishlist"><svg xmlns="http://www.w3.org/2000/svg" height="16px"
+                            viewBox="0 -960 960 960" width="16px" fill="#FFFFFF">
+                            <path
+                                d="m480-144-50-45q-100-89-165-152.5t-102.5-113Q125-504 110.5-545T96-629q0-89 61-150t150-61q49 0 95 21t78 59q32-38 78-59t95-21q89 0 150 61t61 150q0 43-14 83t-51.5 89q-37.5 49-103 113.5T528-187l-48 43Z" />
+                        </svg><span>WISHLIST</span></div>
                 </div>
 
 
@@ -21,10 +26,10 @@
             <div class="mainComponent">
                 <div class="bookDetailContent">
                     <div class="title">
-                        Don't Make Me Think
+                        {{book.bookName}}
                     </div>
                     <div class="author">
-                        by Steve Krug
+                        by {{book.author}}
                     </div>
                     <div class="rating">
                         <div class="stars">4.5<svg xmlns="http://www.w3.org/2000/svg" height="16px"
@@ -32,11 +37,11 @@
                                 <path
                                     d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
                             </svg></div>
-                        <div class="count">(20)</div>
+                        <div class="count">({{book.quantity}})</div>
                     </div>
                     <div class="price">
-                        <div class="currentPrice">Rs .1500</div>
-                        <div class="lastPrice"><del> Rs .2000</del></div>
+                        <div class="currentPrice">Rs .{{book.discountPrice}}</div>
+                        <div class="lastPrice"><del> Rs .{{book.price}}</del></div>
                     </div>
 
                 </div>
@@ -49,14 +54,7 @@
 
 
                     <div class="bookDetailPara">
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration in some form, by injected humour, or randomised words which don't look even slightly
-                        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                        anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
-                        Internet tend to repeat predefined chunks as necessary, making this the first true generator on
-                        the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model
-                        sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum
-                        is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                        {{book.description}}
                     </div>
 
                 </div>
@@ -68,28 +66,28 @@
                     <div class="ratingBox">
                         <div class="title">Overall rating</div>
                         <div class="stars">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                                fill="#707070">
+                            <svg (click)="handleStarsClick(1)" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                viewBox="0 -960 960 960" width="20px" [attr.fill]="feedBackStars[1]">
                                 <path
                                     d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                                fill="#707070">
+                            <svg (click)="handleStarsClick(2)" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                viewBox="0 -960 960 960" width="20px" [attr.fill]="feedBackStars[2]">
                                 <path
                                     d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                                fill="#707070">
+                            <svg (click)="handleStarsClick(3)" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                viewBox="0 -960 960 960" width="20px"[attr.fill]="feedBackStars[3]">
                                 <path
                                     d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                                fill="#707070">
+                            <svg (click)="handleStarsClick(4)" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                viewBox="0 -960 960 960" width="20px"[attr.fill]="feedBackStars[4]">
                                 <path
                                     d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                                fill="#707070">
+                            <svg (click)="handleStarsClick(5)" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                viewBox="0 -960 960 960" width="20px" [attr.fill]="feedBackStars[5]">
                                 <path
                                     d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
                             </svg>
@@ -101,83 +99,32 @@
 
                     </div>
                     <div class="reviewComments">
-                        <div class="comment">
+                        <div *ngFor="let feedback of book.feedback" class="comment">
                             <div class="left">
-                                <div class="profilePic">AC</div>
+                                <div class="profilePic">{{feedback.user_id.fullName[0]}}</div>
                             </div>
                             <div class="right">
-                                <div class="name">Anurag Chahal</div>
+                                <div class="name">{{feedback.user_id.fullName}}</div>
                                 <div class="stars">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#707070">
-                                        <path
-                                            d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#707070">
-                                        <path
-                                            d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
-                                    </svg>
+                                    <div *ngFor="let i of feedback.feedBackStarsPlus"><svg
+                                            xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                            width="20px" fill="#FFCE00">
+                                            <path
+                                                d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
+                                        </svg></div>
+
+                                    <div *ngFor="let i of feedback.feedBackStarsMinus">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                            width="20px" fill="#707070">
+                                            <path
+                                                d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
+                                        </svg>
+
+                                    </div>
+
                                 </div>
                                 <div class="feedback">
-                                    Good product. Even though the translation could have been better, Chanakya's neeti
-                                    are thought provoking. Chanakya has written on many different topics and his
-                                    writings are succinct.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <div class="left">
-                                <div class="profilePic">AC</div>
-                            </div>
-                            <div class="right">
-                                <div class="name">Anurag Chahal</div>
-                                <div class="stars">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#FFCE00">
-                                        <path
-                                            d="m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#707070">
-                                        <path
-                                            d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                        width="20px" fill="#707070">
-                                        <path
-                                            d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" />
-                                    </svg>
-                                </div>
-                                <div class="feedback">
-                                    Good product. Even though the translation could have been better, Chanakya's neeti
-                                    are thought provoking. Chanakya has written on many different topics and his
-                                    writings are succinct.
+                                    {{feedback.comment}}
                                 </div>
                             </div>
                         </div>

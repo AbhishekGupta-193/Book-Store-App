@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+import { SharedDataService } from './services/SharedData/shared-data.service';
 
 
 @NgModule({
@@ -72,7 +73,7 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     MatInputModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

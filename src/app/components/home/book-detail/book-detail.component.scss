@@ -1,4 +1,8 @@
-.bookDetail{
+:host ::ng-deep .mat-typography {
+    margin: 0 !important;
+}
+
+.bookDetail {
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -10,14 +14,15 @@
     .back {
         color: #9D9D9D;
     }
-   .back{
-    cursor: pointer;
-   }
+
+    .back {
+        cursor: pointer;
+    }
 }
 
 .main {
     display: flex;
-    
+
 
 }
 
@@ -42,12 +47,13 @@
 .mainPart {
     display: flex;
     width: 100%;
-   
-    .actions{
+
+    .actions {
         display: flex;
         justify-content: space-between;
         margin-top: 10px;
-        .action{
+
+        .action {
             border-radius: 2px;
             color: #FFFFFF;
             padding: 5px;
@@ -55,15 +61,18 @@
             display: flex;
             justify-content: center;
         }
-        .addToCart{
+
+        .addToCart {
             background-color: #A03037;
         }
-        .wishlist{
+
+        .wishlist {
             display: flex;
             align-items: center;
             background-color: #333333;
             display: flex;
             gap: 5px;
+            cursor: pointer;
         }
     }
 }
@@ -75,25 +84,27 @@
     border-radius: 1px 1px 1px 0px;
 }
 
-.mainComponentLeft{
+.mainComponentLeft {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-.mainComponent{
+
+.mainComponent {
     display: flex;
     flex-direction: column;
     flex: 2;
     padding-left: 100px;
 
 }
-hr{
+
+hr {
     border: 1px solid #9D9D9D;
     margin: 25px 0px;
 }
 
 .bookDetailContent {
-    
+
     .title {
         font-size: 28px;
         line-height: 37px;
@@ -119,8 +130,9 @@ hr{
             background-color: #388E3C;
             color: #FFFFFF;
             padding: 0 5px;
-            
+
         }
+
         .count {
             color: #878787
         }
@@ -128,31 +140,35 @@ hr{
     }
 
     .price {
-        margin:20px 0;
+        margin: 20px 0;
         display: flex;
         gap: 5px;
         align-items: center;
-        .currentPrice{
+
+        .currentPrice {
             text-align: left;
-            font-family:Roboto;
+            font-family: Roboto;
             font-size: 30px;
             letter-spacing: 0px;
             color: #0A0102;
             opacity: 1;
         }
-        .lastPrice{
+
+        .lastPrice {
             color: #878787;
         }
     }
-    
+
 }
 
-.bookDescription{
-    .title{
+.bookDescription {
+    .title {
         font-size: 15px;
-        color: #878787;;
+        color: #878787;
+        ;
     }
-    .bookDetailPara{
+
+    .bookDetailPara {
         padding-left: 10px;
         font-size: 12px;
         line-height: 16px;
@@ -160,61 +176,75 @@ hr{
 }
 
 
-.customerReview{
-    
-    .title{
+.customerReview {
+
+    .title {
         font-size: 18px;
         margin-bottom: 10px;
-        
+
     }
-    .ratingBox{
+
+    .ratingBox {
         background-color: #F5F5F5;
         border-radius: 2px;
         padding: 20px;
         width: 100%;
-        .title{
+
+        .title {
             font-size: 12px;
         }
-        .stars{
+
+        .stars {
             display: flex;
-            margin:10px 0px
+            margin: 10px 0px
         }
-        .feedback{
+
+        .feedback {
             border-radius: 3px;
             background-color: #FFFFFF;
             padding: 10px;
             padding-bottom: 25px;
             color: #707070;
-            input{
-                border:none;
+
+            input {
+                border: none;
                 width: 100%;
                 padding: 5px 2px;
             }
+
             margin-bottom: 10px;
         }
-        .submitButton{
+
+        .submitButton {
             display: flex;
             justify-content: end;
-            button{
+
+            button {
                 background-color: #3371B5;
-                color:#FFFFFF;
+                color: #FFFFFF;
                 border: none;
                 border-radius: 3px;
                 padding: 5px 10px;
             }
 
         }
-        
+
     }
 
-    .reviewComments{
-        
-        .comment{
+    .reviewComments {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        height: 150px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+
+        .comment {
             display: flex;
-            margin-top: 15px;
+
             gap: 10px;
-           
-            .profilePic{
+
+            .profilePic {
                 display: flex;
                 height: 27px;
                 width: 27px;
@@ -225,36 +255,40 @@ hr{
                 justify-content: center;
                 align-items: center;
                 // flex:1
-                
+
             }
-            .stars{
+
+            .stars {
                 display: flex;
             }
-            .name{
-                font-size:15px;
+
+            .name {
+                font-size: 15px;
                 color: #0A0102;
             }
-            .feedback{
-                color:#707070;
+
+            .feedback {
+                color: #707070;
                 font-size: 12px;
             }
 
         }
     }
-    
+
 }
 
-.reviewComments{
+.reviewComments {
     height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
     display: hidden;
     -ms-overflow-style: none;
 }
- 
+
 .reviewComments::-webkit-scrollbar {
     display: none;
 }
-.feedback input{
+
+.feedback input {
     outline: none;
 }

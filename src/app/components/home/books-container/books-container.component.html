@@ -15,10 +15,22 @@
     </div>
 </div>
 <div class="Bookstored">
-    <div *ngFor="let i of filteredProducts | search:searchText">
+    <div *ngFor="let i of paginatedBooks | search:searchText">
         
         <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
     </div>
+</div>
+
+<div class="paginator-container">
+    <button mat-icon-button (click)="previousPage()" class="paginator-button">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span *ngFor="let page of pages" (click)="goToPage(page)" [class.active]="page === currentPage">
+        {{ page }}
+    </span>
+    <button mat-icon-button (click)="nextPage()" class="paginator-button">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
 </div>
 
 <app-footer></app-footer>

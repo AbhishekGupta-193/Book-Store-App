@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/cartServices/http.service';
+import { CartService } from 'src/app/services/cartServices/cart.service';
 @Component({
   selector: 'app-my-cart',
   templateUrl: './my-cart.component.html',
@@ -32,7 +33,7 @@ export class MyCartComponent {
     this.itemSelectedForPlacingOrder=item;
   }
   
-  constructor(private router:Router,private http:HttpService){}
+  constructor(private router:Router,private http:HttpService,private cartService:CartService){}
 
   ItemsForCheckout:any[]=[];
   checkout(){
@@ -64,4 +65,44 @@ export class MyCartComponent {
       this.ItemsForCheckout = JSON.parse(savedItems);
     }
   }
+
+  deleteFromMyCart(item:any){
+    // console.log("_id: ",item._id);
+    this.cartService.deleteFormCart('bookstore_user/remove_cart_item/'+item._id).subscribe({
+      next:(res:any)=>{
+        console.log("Delete from Cart");
+        console.log(res);
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    })
+   }
+
+   decreaseQuantity(item:any){
+    // console.log("_id: ",item._id);
+    let quantity = item.quantityToBuy;
+    this.cartService.updateCart('bookstore_user/cart_item_quantity/'+item._id,quantity-1).subscribe({
+      next:(res:any)=>{
+        console.log("Update in Cart");
+        console.log(res);
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    })
+   }
+   increaseQuantity(item:any){
+    // console.log("_id: ",item._id);
+    let quantity = item.quantityToBuy;
+    this.cartService.updateCart('bookstore_user/cart_item_quantity/'+item._id,quantity+1).subscribe({
+      next:(res:any)=>{
+        console.log("Update in Cart");
+        console.log(res);
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    })
+   }
 }

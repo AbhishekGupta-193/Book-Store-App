@@ -30,6 +30,7 @@ import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
+import { FooterComponent } from './components/home/footer/footer.component';
  
  
 @NgModule({
@@ -47,6 +48,7 @@ import { MyCartComponent } from './components/home/my-cart/my-cart.component';
     OrderPlacedPageComponent,
     SearchPipe,
     MyCartComponent,
+    FooterComponent,
  
   ],
   imports: [

@@ -11,29 +11,24 @@ import { UserProfileComponent } from './components/home/user-profile/user-profil
 import { BookDetailComponent } from './components/home/book-detail/book-detail.component';
 import { MyOrderComponent } from './components/home/my-order/my-order.component';
 import { WishlistComponent } from './components/home/wishlist/wishlist.component';
-
+ 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookCardComponent } from './components/home/book-card/book-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchPipe } from './pipes/search.pipe';
-
+ 
 //Angular Modules
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-
 import { OrderPlacedPageComponent } from './components/home/order-placed-page/order-placed-page.component';
-
-
-
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
 import {MatInputModule} from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 import { MyCartComponent } from './components/home/my-cart/my-cart.component';
 import { SharedDataService } from './services/SharedData/shared-data.service';
 
@@ -50,12 +45,10 @@ import { SharedDataService } from './services/SharedData/shared-data.service';
     MyOrderComponent,
     WishlistComponent,
     BookCardComponent,
-
     OrderPlacedPageComponent,
-
     SearchPipe,
     MyCartComponent,
-
+ 
   ],
   imports: [
     BrowserModule,
@@ -71,9 +64,11 @@ import { SharedDataService } from './services/SharedData/shared-data.service';
     MatCardModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

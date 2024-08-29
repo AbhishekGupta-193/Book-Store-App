@@ -1,22 +1,57 @@
 <!-- NavBar with Search Bar and User Avatar and Cart Icon -->
 
 <div class="header">
-   <img src="../../../../assets/Logo/BookStoreLogo.png" alt="Book Store" class="logo">
-   <h2 class="heading">Bookstore</h2>
+    <img [routerLink]="['/header/']" src="../../../../assets/Logo/BookStoreLogo.png" alt="Book Store" class="logo" style="cursor: pointer;">
+    <h2 [routerLink]="['/header/']" class="heading" style="cursor: pointer;">Bookstore</h2>
     <div class="search-bar">
-        <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search for books" class="search-input">
+        <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()" placeholder="Search for books"
+            class="search-input">
     </div>
     <div class="user-cart">
-        <div>
+        <div (click)="toggleLoginCard()">
             <img src="../../../../assets/Logo/person.svg" alt="User" class="user-avatar">
             <p class="userName">Profile</p>
         </div>
-        <div>
+        <div [routerLink]="['/header/myCart']">
             <img src="../../../../assets/Logo/cart.svg" alt="Cart" class="cart-icon">
             <p class="cartName">Cart</p>
         </div>
-    </div>     
+    </div>
 </div>
-<!-- 
-<app-books-container></app-books-container> -->
+
+<div *ngIf="showLoginCard1" class="login-card">
+    <p class="welcome">Welcome</p>
+    <p class="instructions">To access account and manage orders</p>
+    <button (click)="navigateToLogin()" class="login-button">LOGIN/SIGNUP</button>
+    <hr style="color: #9d9d9d;">
+    <div class="options">
+        <div [routerLink]="['/header/wishlist']" style="display: flex;justify-content: flex-start; cursor: pointer;" >
+            <img src="../../../../assets/Logo/bag.png" alt="My Orders" class="option-icon" style="margin-top: 5px;">
+            <p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">My Orders</p>
+        </div>
+        <div [routerLink]="['/header/wishlist']"style="display: flex;justify-content: flex-start; cursor: pointer;" >
+            <img src="../../../../assets/Logo/wishlist.png" alt="Wishlist" class="option-icon" style="margin-top: 5px;">
+            <p style="color: #9d9d9d; margin-left:10px; margin-top: 5px;">Wishlist</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showLoginCard2" class="login-card">
+    <p class="welcome">Hello Poonam,</p>
+    <div class="options">
+        <div [routerLink]="['/header/userProfile']" style="display: flex;justify-content: flex-start;cursor: pointer;">
+            <img src="../../../../assets/Logo/person.png" alt="user" class="option-icon" style="margin-top: 5px;">
+            <p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">Profile</p>
+        </div>
+        <div [routerLink]="['/header/myOrder']" style="display: flex;justify-content: flex-start;cursor: pointer;">
+            <img src="../../../../assets/Logo/bag.png" alt="My Orders" class="option-icon" style="margin-top: 5px;">
+            <p style="color: #9d9d9d; margin-left: 10px; margin-top: 8px;">My Orders</p>
+        </div>
+        <div [routerLink]="['/header/wishlist']" style="display: flex;justify-content: flex-start;cursor: pointer;">
+            <img src="../../../../assets/Logo/wishlist.png" alt="Wishlist" class="option-icon" style="margin-top: 5px;">
+            <p style="color: #9d9d9d; margin-left:10px; margin-top: 5px;">Wishlist</p>
+        </div>
+    </div>
+    <button (click)="logoutmethod()" class="logout">Logout</button>
+</div>
 <router-outlet></router-outlet>

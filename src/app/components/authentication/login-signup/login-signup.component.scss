@@ -24,6 +24,7 @@ body {
     // border: 2px solid blue;
     display: flex;
     flex-direction: column;
+    flex: 1;
     height: 94%;
     margin-top: 2%;
     width: 48%;
@@ -52,6 +53,7 @@ img {
 
 .right {
     // border: 2px solid blue;
+    flex: 1;
     border-radius: 4px;
     box-shadow: 0 2px 6px 0 rgb(207, 204, 204);
     height: 100%;
@@ -85,6 +87,7 @@ img {
     position: relative;
     color: #878787;
     cursor: pointer;
+    font-size: large;
 }
 
 .login_title::after {
@@ -113,6 +116,7 @@ img {
     position: relative;
     color: #878787;
     cursor: pointer;
+    font-size: large;
 }
 
 .signup_title::after {
@@ -259,3 +263,9 @@ mat-hint {
     border: none;
     margin-top: 8%;
 }
+
+@media screen and (max-width:1020px) {
+    .left{
+        display: none;
+    }
+  }

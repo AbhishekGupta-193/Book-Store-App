@@ -18,7 +18,7 @@
       </div>
     </div>
 </div>
-
+ 
 <div *ngIf="isLoggedInVar==true">
     <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
     </div>
@@ -58,13 +58,13 @@
                 <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
             </div>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
             <div class="closedView">
                 <h3>Address Details</h3>
             </div>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView2">
             <div class="title">
                 <h3>Customer Details</h3>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-    
+   
             <div class="homeAddress">
                 <div class="type">
                     <input type="radio">
@@ -117,10 +117,10 @@
                     </span>
                 </div>
             </div>
-    
+   
             <button class="continueBtn" (click)="changeOrderSummaryVisibility()">CONTINUE</button>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView3">
             <div class="title">
                 <h3>Customer Details</h3>
@@ -156,7 +156,7 @@
                 </div>
             </div>
         </div>
-    
+   
         <div class="container3" *ngIf="!IsOrderSummaryVisible" (click)="changeOrderSummaryVisibility()">
             <div class="closedView">
                 <h3>Order Summary</h3>
@@ -186,3 +186,5 @@
         </div>
     </div>    
 </div>
+ 
+ 

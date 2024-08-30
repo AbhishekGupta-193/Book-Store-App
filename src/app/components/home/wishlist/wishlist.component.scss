@@ -247,5 +247,16 @@ mat-icon{
   margin-top: 0 !important;
 }
    
+.scrollable-div{
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: hidden;
+  -ms-overflow-style: none;
+}
+
+.scrollable-div::-webkit-scrollbar {
+  display: none;
+}
 
 

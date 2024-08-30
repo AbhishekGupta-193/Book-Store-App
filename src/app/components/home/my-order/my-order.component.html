@@ -1,4 +1,4 @@
-
+ 
 <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Order</span>
 </div>
 <div class="book-list" *ngIf="isLoggedIn==false">
@@ -20,12 +20,12 @@
         <button [routerLink]="['/loginSignup']">LOGIN/SIGNUP</button>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
-
+ 
   <!-- ORDERS DATA FROM LOCALSTORAGE -->
    </div>
-
+ 
  <div *ngIf="isLoggedIn==true" class="mainOrderDiv">
   <div *ngFor="let order of myOrders">
     <mat-card class="book-card" >
@@ -54,4 +54,6 @@
     </mat-card>
   </div>
  </div>
-
+ 
+ 
+ 

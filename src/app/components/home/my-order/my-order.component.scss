@@ -1,132 +1,146 @@
-
-.nav {
-  margin-left: 10%;
-  padding-top: 20px;
-  // padding-bottom: 20px;
-
-  .back {
-      color: #9D9D9D;
+ 
+  .nav {
+    margin-left: 10%;
+    padding-top: 20px;
+    // padding-bottom: 20px;
+ 
+    .back {
+        color: #9D9D9D;
+    }
+  .back{
+    cursor: pointer;
   }
- .back{
-  cursor: pointer;
- }
-}
-.book-list {
+  }
+  .book-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+   
+    .book-card {
+      width: 80%;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+   
+    .book-image {
+      background-size: cover;
+      height: 80px;
+      width: 60px;
+      border-radius: 50%;
+    }
+   
+    mat-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+   
+    mat-form-field {
+      width: 300px;
+    }
+   
+    mat-card-title,
+    mat-card-subtitle {
+      margin: 0;
+    }
+   
+    mat-card-content p {
+      margin: 5px 0;
+    }
+    s{
+        padding-left: 8px;
+        color: #9D9D9D;
+    }
+ 
+    .main-container{
+      width: 40%;
+      margin-top: 15%;
+      margin-left: 30%;
+  }
+  .msg-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 30%;
+      margin-bottom: 10%;
+  }
+  .imgdiv{
+      height: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+ 
+  }
+  .btn-container{
+      height: 30%;
+      display: flex;
+      justify-content: center;
+      margin-top: 8%;
+  }
+  .topmsg{
+      font-weight: 600;
+      font-size: 25px;
+      font: normal normal medium 25px/33px Roboto;
+  }
+  .msg{
+      margin-top: 1%;
+  }
+  .loginViewmsg{
+      color: #9D9D9D;
+      margin-top: 20%;
+      font-weight: 500;
+  }
+  button{
+      border: none;
+      background-color: white;
+      border: 2px solid #A03037;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 2px;
+      color: #A03037;
+      font-weight: 600;
+      cursor: pointer;
+  }
+ 
+  .loginlogoutDiv{
+    width:50%;
+    margin-bottom: 50px;
+  }
+ 
+  .mainOrderDiv{
+    margin-top: 5%;
+    margin-left: 15%;
+  }
+ 
+  .line{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+   
+  .greenDot{
     margin-top: 20px;
   }
-   
-  .book-card {
-    width: 80%;
-    height: 150px;
-    margin-bottom: 20px;
+ 
+  .footerPosition{
+    position: absolute;
+    bottom: auto;
+    width: 100%;
   }
-   
-  .book-image {
-    background-size: cover;
-    height: 80px;
-    width: 60px;
-    border-radius: 50%;
+ 
+  .scrollable-div{
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: hidden;
+    -ms-overflow-style: none;
   }
-   
-  mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ 
+  .scrollable-div::-webkit-scrollbar {
+    display: none;
   }
-   
-  mat-form-field {
-    width: 300px;
-  }
-   
-  mat-card-title,
-  mat-card-subtitle {
-    margin: 0;
-  }
-   
-  mat-card-content p {
-    margin: 5px 0;
-  }
-  s{
-      padding-left: 8px;
-      color: #9D9D9D;
-  }
-
-  .main-container{
-    width: 40%;
-    margin-top: 15%;
-    margin-left: 30%;
-}
-.msg-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
-    margin-bottom: 10%;
-}
-.imgdiv{
-    height: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.btn-container{
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    margin-top: 8%;
-}
-.topmsg{
-    font-weight: 600;
-    font-size: 25px;
-    font: normal normal medium 25px/33px Roboto;
-}
-.msg{
-    margin-top: 1%;
-}
-.loginViewmsg{
-    color: #9D9D9D;
-    margin-top: 20%;
-    font-weight: 500;
-}
-button{
-    border: none;
-    background-color: white;
-    border: 2px solid #A03037;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
-    color: #A03037;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.loginlogoutDiv{
-  width:50%;
-  margin-bottom: 50px;
-}
-
-.mainOrderDiv{
-  margin-top: 5%;
-  margin-left: 15%;
-}
-
-.line{
-  display: flex;
-}
-   
-.greenDot{
-  margin-top: 20px;
-}
-
-.footerPosition{
-  position: absolute;
-  bottom: auto;
-  width: 100%;
-}
-
-
+ 
+ 
+ 
+ 

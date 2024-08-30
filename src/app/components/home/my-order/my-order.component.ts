@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-order',
   templateUrl: './my-order.component.html',
   styleUrls: ['./my-order.component.scss']
 })
-export class MyOrderComponent {
+export class MyOrderComponent implements OnInit {
+  isLoggedIn=false
   
   myOrders: any[] = [];
   ngOnInit() {
+
 
     //RETRIEVING MY DATA FROM LOCALSTORAGE (THESE ARE THE DATAS OF PRODUCTS WHICH HAD BEEN CHECKOUT)
     const savedItems = localStorage.getItem('ItemsForCheckout');
     if (savedItems) {
       this.myOrders = JSON.parse(savedItems);
+    }
+    if(localStorage.getItem('accessToken')!=null){
+      this.isLoggedIn=true
     }
   }
 
@@ -25,9 +30,6 @@ export class MyOrderComponent {
     return formattedDate;
   }
 
-  isLoggedIn(){
-    if(localStorage.getItem('accessToken')==null) return true;
-    return false;
-  }
+  
 
 }

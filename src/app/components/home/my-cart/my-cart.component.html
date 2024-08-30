@@ -1,4 +1,4 @@
-<div *ngIf="isLoggedIn()">
+<div *ngIf="isLoggedInVar==false">
     <div class="main-container">
       <div class="msg-container">
         <div>
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div *ngIf="!isLoggedIn()">
+<div *ngIf="isLoggedInVar==true">
     <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
     </div>
     <div class="myCart">

@@ -43,6 +43,11 @@ export class WishlistComponent implements OnInit {
      });
   }
 
+  isWishListEmpty(){
+    if(localStorage.getItem('accessToken')==null) return true;
+    return false;
+  }
+
   getRandomImagePath():string{
     let index=Math.floor(Math.random()*this.imagePaths.length);
     return this.imagePaths[index];

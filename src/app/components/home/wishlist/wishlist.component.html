@@ -1,30 +1,54 @@
 <!-- When Wishlist is not empty -->
 <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Wishlist</span>
 </div>
-<div class="wishListHeading" *ngIf="!isEmpty">
-  <p>My WishList(01)</p>
+<div class="wishListHeading" *ngIf="isWishListEmpty()">
+  <div class="main-container">
+    <div class="msg-container">
+      <div>
+        <span class="topmsg">PLEASE LOG IN</span>
+      </div>
+      <div class="msg">
+        <span class="loginViewmsg">Login to view items in your wishlist.</span>
+      </div>
+    </div>
+    <div class="imgdiv">
+      <img src="../../../../assets/wishlistlogin.png" alt="" />
+    </div>
+    <div class="btn-container">
+      <div class="btn">
+        <button>LOGIN/SIGNUP</button>
+      </div>
+    </div>
+  </div>  
 </div>
-<div *ngFor="let i of wishList">
-  <div class="wish-list">
-    <mat-card class="wish-card">  
-     <div class="wish-card-content">
-      <mat-card-header>
-        <div mat-card-avatar class="book-image">
-           <img [src]="getRandomImagePath()" height=90px width=70px>
-        </div>
-        <mat-card-title>{{i.product_id?.bookName}}</mat-card-title>
-        <mat-card-subtitle>{{i.product_id?.author}}<p class="price" style="color: black; margin-top: 10px;"><b>{{i.product_id?.discountPrice}}</b><s>{{i.product_id?.price}}</s></p></mat-card-subtitle>
-        <mat-icon (click)="deleteWishListItem(i.product_id?._id)">delete</mat-icon>
-       </mat-card-header>
-     </div>  
-   </mat-card>
+
+<div *ngIf="!isWishListEmpty()">
+  <div class="wishListHeading">
+    <p>My WishList({{wishList.length}})</p>
+  </div>
+  <div *ngFor="let i of wishList">
+    <div class="wish-list">
+      <mat-card class="wish-card">  
+       <div class="wish-card-content">
+        <mat-card-header>
+          <div mat-card-avatar class="book-image">
+             <img [src]="getRandomImagePath()" height=90px width=70px>
+          </div>
+          <mat-card-title>{{i.product_id?.bookName}}</mat-card-title>
+          <mat-card-subtitle>{{i.product_id?.author}}<p class="price" style="color: black; margin-top: 10px;"><b>{{i.product_id?.discountPrice}}</b><s>{{i.product_id?.price}}</s></p></mat-card-subtitle>
+          <mat-icon (click)="deleteWishListItem(i.product_id?._id)">delete</mat-icon>
+         </mat-card-header>
+       </div>  
+     </mat-card>
+    </div>
   </div>
 </div>
+
  
  
 <!-- When Wishlist is empty -->
  
-<div class="main-container" *ngIf="isEmpty">
+<!-- <div class="main-container" *ngIf="isEmpty">
   <div class="msg-container">
     <div>
       <span class="topmsg">PLEASE LOG IN</span>
@@ -42,7 +66,7 @@
     </div>
   </div>
 </div>
- 
+  -->
  
 <app-footer></app-footer>
  

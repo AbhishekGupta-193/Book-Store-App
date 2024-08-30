@@ -11,6 +11,7 @@ import { CartService } from 'src/app/services/cartServices/cart.service';
 })
 export class BookDetailComponent implements OnInit {
   showPopupMessage: boolean = false;
+  showPopupAddToCart:boolean=false;
   book: any;
   dataToSend={
     "comment":'',
@@ -97,6 +98,10 @@ export class BookDetailComponent implements OnInit {
       next:(res:any)=>{
         console.log("Added to Cart");
         console.log(res);
+        this.showPopupAddToCart=true;
+        setTimeout(()=>{
+          this.showPopupAddToCart = false;
+        },1000);
       },
       error:(err:any)=>{
         console.log(err);

@@ -1,48 +1,48 @@
 <body>
     
-<div class="BookContainerHeading">
-    <div class="sideHeading">
-       <h2>Books</h2>
-       <h3>(128 items)</h3>
-    </div>
-    <div class="filter-tab">
-        <mat-form-field appearance="fill">
-            <mat-label>Sort By relavance</mat-label>
-            <mat-select (selectionChange)="onFilterChange($event.value)">
-                <mat-option value="price" >price</mat-option>
-                <mat-option value="rating">rating</mat-option>
-                <mat-option value="discountPrice">discounted</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-</div>
-<div *ngIf="isLoading" class="shimmer-wrapper">
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-    <div class="shimmer-card"></div>
-</div>
-<div class="Bookstored" *ngIf="!isLoading">
-        <div *ngFor="let i of paginatedBooks | search:searchText">
-          <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
+    <div class="BookContainerHeading">
+        <div class="sideHeading">
+           <h2>Books</h2>
+           <h3>(128 items)</h3>
         </div>
-</div>
-
-<div class="paginator-container">
-    <button mat-icon-button (click)="previousPage()" class="paginator-button">
-        <mat-icon>chevron_left</mat-icon>
-    </button>
-    <span *ngFor="let page of pages" (click)="goToPage(page)" [class.active]="page === currentPage">
-        {{ page }}
-    </span>
-    <button mat-icon-button (click)="nextPage()" class="paginator-button">
-        <mat-icon>chevron_right</mat-icon>
-    </button>
-</div>
-
-<app-footer></app-footer>
-</body>
+        <div class="filter-tab">
+            <mat-form-field appearance="fill">
+                <mat-label>Sort By relavance</mat-label>
+                <mat-select (selectionChange)="onFilterChange($event.value)">
+                    <mat-option value="price" >price</mat-option>
+                    <mat-option value="rating">rating</mat-option>
+                    <mat-option value="discountPrice">discounted</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div *ngIf="isLoading" class="shimmer-wrapper">
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+    </div>
+    <div class="Bookstored" *ngIf="!isLoading">
+            <div *ngFor="let i of paginatedBooks | search:searchText">
+              <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
+            </div>
+    </div>
+    
+    <div class="paginator-container">
+        <button mat-icon-button (click)="previousPage()" class="paginator-button">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <span *ngFor="let page of pages" (click)="goToPage(page)" [class.active]="page === currentPage">
+            {{ page }}
+        </span>
+        <button mat-icon-button (click)="nextPage()" class="paginator-button">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+    
+    <app-footer></app-footer>
+    </body>

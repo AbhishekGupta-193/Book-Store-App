@@ -90,6 +90,7 @@ export class BooksContainerComponent implements OnInit {
     this.updatePaginatedBooks();
   }
 
+  
   navToCardDetail(book: any) {
     this.sharedData.setBook(book);
     this.router.navigate(['/header/bookDetail']);

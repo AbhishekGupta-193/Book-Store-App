@@ -58,7 +58,6 @@ mat-form-field {
   border-radius: 50%;
   margin: 0 10px;
 }
-
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
@@ -66,8 +65,7 @@ mat-form-field {
   100% {
     background-position: 1000px 0;
   }
-}
- 
+} 
 .shimmer-wrapper {
   display: flex;
   flex-wrap: wrap;

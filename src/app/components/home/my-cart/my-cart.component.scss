@@ -292,3 +292,17 @@ s{
     cursor: pointer;
     margin-top: 12%;
 }
+
+
+.container1 {
+    height: 310px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: hidden;
+    -ms-overflow-style: none;
+}
+
+.container1::-webkit-scrollbar {
+    display: none;
+}
+

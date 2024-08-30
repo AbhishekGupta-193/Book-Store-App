@@ -6,6 +6,7 @@ interface WishListItem{
   price: any;
   discountPrice: any;
   bookName: any;
+  imagePath?: string; // Add imagePath property
 }
  
 @Component({
@@ -19,6 +20,7 @@ export class WishlistComponent implements OnInit {
   isEmpty:boolean=false;
   wishList:WishListItem[]= [];
   wishlist:any[]=[];
+  // randomImagePath: string = '';
   imagePaths:string[]=[
     '../../../../assets/Books/Book1.png',
     '../../../../assets/Books/Book2.png',
@@ -36,11 +38,28 @@ export class WishlistComponent implements OnInit {
       next:(res:any)=>{
         console.log(res.result);
         this.wishList = res.result.filter((item:WishListItem) =>item.product_id!==null);
+        this.assignRandomImages();
       },
       error:(err:any)=>{
         console.log(err);
       }
      });
+    //  this.randomImagePath=this.getRandomImagePath();
+  }
+
+  assignRandomImages(): void {
+    this.imagePaths = this.shuffleArray(this.imagePaths);
+    this.wishList.forEach((item, index) => {
+      item.imagePath = this.imagePaths[index % this.imagePaths.length];
+    });
+  }
+
+  shuffleArray(array:string[]):string[]{
+    for(let i=array.length-1;i>0;i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
   isWishListEmpty(){
@@ -64,4 +83,5 @@ export class WishlistComponent implements OnInit {
       }
     });
   }
+
 }

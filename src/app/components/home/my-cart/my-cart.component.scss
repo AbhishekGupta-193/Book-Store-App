@@ -357,3 +357,15 @@ button{
     cursor: pointer;
 }
 
+.scrollable-div{
+    height: 300px;  
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: hidden;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollable-div::-webkit-scrollbar {
+    display: none;
+  }
+

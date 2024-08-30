@@ -1,18 +1,32 @@
-.header{
+
+.header {
     background-color: #A03037;
     display: flex;
-    // justify-content: space-between;
     align-items: center;
     padding-left: 3%;
     padding-right: 3%;
+    margin-top: 0px;
+    justify-content: space-evenly;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
 
 
 .logo{
     width: 31px;
     height: 24px;
     opacity: 1;
-    margin: 10px;
+    
     padding: 10px;
     // margin-left:100px;
     margin-right: 0;
@@ -36,8 +50,9 @@
 }
 .header-left{
     display: flex;
-    width: 100%;
+
     align-items: center;
+    flex:3;
 
 }
 input{
@@ -60,6 +75,7 @@ input{
     justify-content: end;
     align-items: center;
     cursor: pointer;
+    flex: 1;
 }
 
 .user-avatar{
@@ -190,3 +206,4 @@ input{
     }
     
   }
+

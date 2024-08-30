@@ -25,5 +25,9 @@ export class MyOrderComponent {
     return formattedDate;
   }
 
+  isLoggedIn(){
+    if(localStorage.getItem('accessToken')==null) return true;
+    return false;
+  }
 
 }

@@ -59,6 +59,34 @@ mat-form-field {
   margin: 0 10px;
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+ 
+.shimmer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+ 
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 1000px 100%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  animation: shimmer 2s infinite linear;
+  border-radius: 8px;
+}
 .paginator-container span {
   margin: 0 5px;
   cursor: pointer;

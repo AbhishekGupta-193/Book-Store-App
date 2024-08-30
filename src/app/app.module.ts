@@ -52,7 +52,6 @@ import {MatMenuModule} from '@angular/material/menu';
     SearchPipe,
     MyCartComponent,
     FooterComponent,
- 
   ],
   imports: [
     BrowserModule,

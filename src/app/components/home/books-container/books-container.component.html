@@ -16,10 +16,20 @@
         </mat-form-field>
     </div>
 </div>
-<div class="Bookstored">
-    <div *ngFor="let i of paginatedBooks | search:searchText">
-        <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
-    </div>
+<div *ngIf="isLoading" class="shimmer-wrapper">
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+    <div class="shimmer-card"></div>
+</div>
+<div class="Bookstored" *ngIf="!isLoading">
+        <div *ngFor="let i of paginatedBooks | search:searchText">
+          <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
+        </div>
 </div>
 
 <div class="paginator-container">

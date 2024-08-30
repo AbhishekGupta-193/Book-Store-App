@@ -5,17 +5,11 @@
    <div class="bookCardContainer">
       <div class="book_widget" matTooltip="Info about the action">
          <div class="img_div">
-
             <img [src]="selectedImagePath" (click)="handleClick()" alt="bookImage">
             <div>
                <div class="hoverElement">Quick View</div>
             </div>
-
-            
          </div>
-
-
-
          <div class="book_details_div">
             <h2 class="book_title">{{book.bookName}} </h2>
             <span class="book_author">by {{book.author}}</span>

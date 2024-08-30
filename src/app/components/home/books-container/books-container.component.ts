@@ -84,6 +84,7 @@ export class BooksContainerComponent implements OnInit {
     this.filteredProducts.sort((a: any, b: any) => {
       return a[filter] - b[filter];
     });
+    console.log(this.filteredProducts)
     this.updatePaginatedBooks();
   }
 

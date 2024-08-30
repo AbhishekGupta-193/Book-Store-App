@@ -1,4 +1,6 @@
 <!-- NavBar with Search Bar and User Avatar and Cart Icon -->
+<body>
+    
 
 <header id="myHeader" class="header">
     <!-- <div class="hamburger">
@@ -74,5 +76,11 @@
     </div>
     <button (click)="logoutmethod()" class="logout">Logout</button>
 </div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+</body>

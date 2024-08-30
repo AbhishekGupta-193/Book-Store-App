@@ -1,4 +1,4 @@
-
+ 
 <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Order</span>
 </div>
 <div class="book-list" *ngIf="isLoggedIn()">
@@ -20,39 +20,44 @@
         <button [routerLink]="['/loginSignup']">LOGIN/SIGNUP</button>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
-
+ 
   <!-- ORDERS DATA FROM LOCALSTORAGE -->
    </div>
-
- <div *ngIf="!isLoggedIn()" class="mainOrderDiv">
-  <div *ngFor="let order of myOrders">
-    <mat-card class="book-card" >
-      <div style="display: flex; justify-content: space-between;">
-        <mat-card-header>
-          <div mat-card-avatar class="book-image">
-            <img src="../../../../assets/Books/Book2.png" height=90px width=70px>
+ 
+   <div class="scrollable-div">
+    <div *ngIf="!isLoggedIn()" class="mainOrderDiv">
+      <div *ngFor="let order of myOrders">
+        <mat-card class="book-card" >
+          <div style="display: flex; justify-content: space-between;">
+            <mat-card-header>
+              <div mat-card-avatar class="book-image">
+                <img src="../../../../assets/Books/Book2.png" height=90px width=70px>
+              </div>
+              <mat-card-title>{{order.product_id.bookName}}</mat-card-title>
+              <mat-card-subtitle>{{order.product_id.author}}<p style="color: black; margin-top: 10px;"><b>Rs.
+                    {{order.product_id.discountPrice}}</b><s> Rs.{{order.product_id.price}}</s></p></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <b class="line">
+                <svg class="greenDot" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                fill="#26A541">
+                <path
+                  d="M480.2-240Q380-240 310-309.8q-70-69.8-70-170T309.8-650q69.8-70 170-70T650-650.2q70 69.8 70 170T650.2-310q-69.8 70-170 70Z" />
+                </svg>
+                <p style="float: right; margin-top: 20px;">
+                  Order Placed on {{formatDate(order.updatedAt)}}
+                </p>
+              </b>
+            </mat-card-content>
           </div>
-          <mat-card-title>{{order.product_id.bookName}}</mat-card-title>
-          <mat-card-subtitle>{{order.product_id.author}}<p style="color: black; margin-top: 10px;"><b>Rs.
-                {{order.product_id.discountPrice}}</b><s> Rs.{{order.product_id.price}}</s></p></mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <b class="line">
-            <svg class="greenDot" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-            fill="#26A541">
-            <path
-              d="M480.2-240Q380-240 310-309.8q-70-69.8-70-170T309.8-650q69.8-70 170-70T650-650.2q70 69.8 70 170T650.2-310q-69.8 70-170 70Z" />
-            </svg>
-            <p style="float: right; margin-top: 20px;">
-              Order Placed on {{formatDate(order.updatedAt)}}
-            </p>
-          </b>
-        </mat-card-content>
+        </mat-card>
       </div>
-    </mat-card>
-  </div>
- </div>
+     </div>
+   </div>
+ 
  <app-footer class="footerPosition"></app-footer>
-<router-outlet></router-outlet> 
+<router-outlet></router-outlet>
+ 
+ 

@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class BooksContainerComponent implements OnInit {
   booksList: any[] = [];
   filteredProducts: any[] = [];
+  loadingPages=new Array(8).fill(0)
 
   //OBJECTS REQUIRED FOR PAGINATOR
   totalBooks: number = 100;
@@ -23,6 +24,7 @@ export class BooksContainerComponent implements OnInit {
   pages: number[] = [];
 
   @Input() searchText: any;
+  isLoading=true
 
   constructor(private bookService: BookService, private dataService: DataService, private sharedData: SharedDataService, private router: Router) { }
 
@@ -35,6 +37,7 @@ export class BooksContainerComponent implements OnInit {
         this.pages = Array(Math.ceil(this.totalBooks / this.pageSize)).fill(0).map((x, i) => i + 1);
         this.updatePaginatedBooks();
         console.log(response);
+        this.isLoading=false
       },
       error: (error) => {
         console.log(error);

@@ -105,4 +105,9 @@ export class MyCartComponent {
       }
     })
    }
+
+   isLoggedIn(){
+    if(localStorage.getItem('accessToken')==null) return true;
+    return false;
+  }
 }

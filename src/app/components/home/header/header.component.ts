@@ -32,7 +32,11 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleLoginCard() {
+    console.log(localStorage.getItem('accessToken'))
+    
     if (localStorage.getItem('accessToken') == null) {
+      console.log("something is happengin")
+
       this.showLoginCard1 = !this.showLoginCard1;
       this.showLoginCard2 = false
     } else {

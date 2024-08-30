@@ -16,7 +16,14 @@
         </mat-form-field>
     </div>
 </div>
-<div class="Bookstored">
+<div class="Bookstored" *ngIf="isLoading">
+    <div *ngFor="let i of loadingPages">
+        <app-shimmer-card></app-shimmer-card>
+
+    </div>
+</div>
+
+<div class="Bookstored" *ngIf="isLoading==false">
     <div *ngFor="let i of paginatedBooks | search:searchText">
         <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
     </div>

@@ -18,7 +18,6 @@
 </div>
 <div class="Bookstored">
     <div *ngFor="let i of paginatedBooks | search:searchText">
-        
         <app-book-card [book]="i" (navToCardDetail)="navToCardDetail($event)"></app-book-card>
     </div>
 </div>

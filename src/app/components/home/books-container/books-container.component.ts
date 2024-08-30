@@ -76,7 +76,8 @@ export class BooksContainerComponent implements OnInit {
   updatePaginatedBooks() {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    this.paginatedBooks = this.booksList.slice(startIndex, endIndex);
+    // this.paginatedBooks = this.booksList.slice(startIndex, endIndex);
+    this.paginatedBooks=this.filteredProducts.slice(startIndex,endIndex);
   }
 
   onFilterChange(filter: any) {
@@ -84,7 +85,7 @@ export class BooksContainerComponent implements OnInit {
     this.filteredProducts.sort((a: any, b: any) => {
       return a[filter] - b[filter];
     });
-    console.log(this.filteredProducts)
+    console.log(this.filteredProducts);
     this.updatePaginatedBooks();
   }
 

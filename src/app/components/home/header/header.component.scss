@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.content {
+    flex: 1;
+  }
 
 .header {
     background-color: #A03037;
@@ -9,7 +18,8 @@
     justify-content: space-evenly;
     width: 100%;
     position: relative;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
 }
 
 .sticky {
@@ -17,22 +27,23 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
 }
 
 
 
-.logo{
+.logo {
     width: 31px;
     height: 24px;
     opacity: 1;
-    
+
     padding: 10px;
     // margin-left:100px;
     margin-right: 0;
 }
 
-.heading{
+.heading {
     color: white;
     font-size: 30px;
     margin: 10px;
@@ -48,19 +59,20 @@
     text-transform: capitalize;
     opacity: 1;
 }
-.header-left{
-    display: flex;
 
+.header-left {
+    display: flex;
     align-items: center;
-    flex:3;
+    flex: 3;
 
 }
-input{
+
+input {
     width: 50vw;
 }
 
-.search-input{
-    
+.search-input {
+
     height: 30px;
     margin: 10px;
     margin-left: 25px;
@@ -70,7 +82,7 @@ input{
     opacity: 1;
 }
 
-.user-cart{
+.user-cart {
     display: flex;
     justify-content: end;
     align-items: end;
@@ -78,7 +90,7 @@ input{
     flex: 1;
 }
 
-.user-avatar{
+.user-avatar {
     width: 30px;
     height: 30px;
     margin: 10px;
@@ -90,7 +102,7 @@ input{
     cursor: pointer;
 }
 
-.cart-icon{
+.cart-icon {
     width: 30px;
     height: 30px;
     margin: 10px;
@@ -101,8 +113,8 @@ input{
     opacity: 1;
 }
 
-.cartName{
-    margin:0;
+.cartName {
+    margin: 0;
     margin-left: 25px;
     color: white;
     font: normal normal normal 10px/13px Roboto;
@@ -110,7 +122,7 @@ input{
     opacity: 1;
 }
 
-.userName{
+.userName {
     margin: 0;
     margin-left: 20px;
     font: normal normal normal 10px/13px Roboto;
@@ -121,8 +133,8 @@ input{
 
 .login-card {
     position: absolute;
-    top: 60px; 
-    right: 20px; 
+    top: 60px;
+    right: 20px;
     padding: 20px;
     background-color: white;
     border: 1px solid #ccc;
@@ -133,81 +145,83 @@ input{
     text-align: center;
     z-index: 1;
 }
- 
+
 .welcome {
     text-align: left;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
- 
+
 .instructions {
     font-size: 14px;
     margin-bottom: 15px;
     color: #9d9d9d;
     text-align: left;
 }
- 
+
 .login-button {
     background-color: white;
-    color :#A03037;
-    border:#A03037;
+    color: #A03037;
+    border: #A03037;
     border-style: solid;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-   display: flex;
-   justify-content: flex-start;
-   
+    display: flex;
+    justify-content: flex-start;
+
 }
- 
+
 .options {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+
 .option-icon {
     width: 24px;
     height: 24px;
     margin-bottom: 5px;
 }
- 
+
 .logout {
-   
+
     background-color: white;
-    color :#A03037;
-    border:#A03037;
+    color: #A03037;
+    border: #A03037;
     border-style: solid;
     padding: 10px 20px;
     cursor: pointer;
     margin-bottom: 20px;
-   display: flex;
-   justify-content: center;
-   width: 150px;
-   
+    display: flex;
+    justify-content: center;
+    width: 150px;
+
 }
 
 @media screen and (max-width: 815px) {
-    input{
+    input {
         display: none;
     }
-    .search-icon{
+
+    .search-icon {
         display: flex;
         flex-direction: column;
         align-items: end;
         justify-content: end;
         bottom: 0;
     }
-  }
+}
 
-  @media screen and (min-width: 815px) {
-    input{
+@media screen and (min-width: 815px) {
+    input {
         display: flex;
     }
-    .search-icon{
+
+    .search-icon {
         display: none;
     }
-    
-  }
 
+}

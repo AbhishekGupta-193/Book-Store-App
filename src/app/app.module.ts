@@ -34,6 +34,8 @@ import { FooterComponent } from './components/home/footer/footer.component';
 import { SharedDataService } from './services/SharedData/shared-data.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
+import { ShimmerCardComponent } from './components/home/shimmer-card/shimmer-card.component';
+
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import {MatMenuModule} from '@angular/material/menu';
     SearchPipe,
     MyCartComponent,
     FooterComponent,
+    ShimmerCardComponent,
+   
  
   ],
   imports: [
@@ -71,7 +75,10 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     MatRadioModule,
     MatPaginatorModule,
-    MatMenuModule
+    MatMenuModule,
+   
+
+    
   ],
   providers: [SharedDataService],
   bootstrap: [AppComponent]

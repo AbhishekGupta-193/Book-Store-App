@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cartServices/cart.service';
 })
 export class MyCartComponent {
   IsOrderSummaryVisible:boolean=false;
-
+  isLoggedInVar=false
   addressView1:boolean=true;
   addressView2:boolean=false;
   addressView3:boolean=false;
@@ -64,6 +64,12 @@ export class MyCartComponent {
     if (savedItems) {
       this.ItemsForCheckout = JSON.parse(savedItems);
     }
+    console.log(localStorage.getItem('accessToken'))
+    if(localStorage.getItem('accessToken')!=null){
+      console.log("yeah")
+
+      this.isLoggedInVar=true
+    }
   }
 
   deleteFromMyCart(item:any){
@@ -107,7 +113,7 @@ export class MyCartComponent {
    }
 
    isLoggedIn(){
-    if(localStorage.getItem('accessToken')==null) return true;
-    return false;
+    if(localStorage.getItem('accessToken')==null) return false;
+    return true;
   }
 }

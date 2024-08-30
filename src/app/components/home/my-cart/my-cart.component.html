@@ -1,4 +1,4 @@
-<div *ngIf="isLoggedIn()">
+<div *ngIf="isLoggedInVar==false">
     <div class="main-container">
       <div class="msg-container">
         <div>
@@ -18,12 +18,10 @@
       </div>
     </div>
 </div>
-
-<div *ngIf="!isLoggedIn()">
-    <div 
-       class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
+ 
+<div *ngIf="isLoggedInVar==true">
+    <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
     </div>
- <div class="scrollable-div">
     <div class="myCart">
         <div class="container1">
             <div class="title">
@@ -33,42 +31,40 @@
                     Use Current Location
                 </div>
             </div>
-            <div class="scrollable-div">
-                <div class="content" *ngFor="let item of cartItems">
-                    <div class="bookImg">
-                        <img src="../assets/myCart/Book2.png" alt="book1">
-                    </div>
-                    <div class="aboutBook">
-                        <div class="bookTitle">
-                            <!-- Don't Make Me Think -->
-                            {{item.product_id.bookName}}
-                        </div>
-                        <div class="author">
-                            <!-- by Steve King -->
-                            {{item.product_id.author}}
-                        </div>
-                        <div class="price">
-                            <!-- RS.1500 -->
-                            Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
-                        </div>
-                        <div class="buttons">
-                            <button class="minusBtn" (click)="decreaseQuantity(item)">-</button>
-                            <button class="countBtn">{{item.quantityToBuy}}</button>
-                            <button class="plusBtn" (click)="increaseQuantity(item)">+</button>
-                            <button class="removeBtn" (click)="deleteFromMyCart(item)">Remove</button>
-                        </div>
-                    </div>
-                    <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
+            <div class="content" *ngFor="let item of cartItems">
+                <div class="bookImg">
+                    <img src="../assets/myCart/Book2.png" alt="book1">
                 </div>
+                <div class="aboutBook">
+                    <div class="bookTitle">
+                        <!-- Don't Make Me Think -->
+                        {{item.product_id.bookName}}
+                    </div>
+                    <div class="author">
+                        <!-- by Steve King -->
+                        {{item.product_id.author}}
+                    </div>
+                    <div class="price">
+                        <!-- RS.1500 -->
+                        Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
+                    </div>
+                    <div class="buttons">
+                        <button class="minusBtn" (click)="decreaseQuantity(item)">-</button>
+                        <button class="countBtn">{{item.quantityToBuy}}</button>
+                        <button class="plusBtn" (click)="increaseQuantity(item)">+</button>
+                        <button class="removeBtn" (click)="deleteFromMyCart(item)">Remove</button>
+                    </div>
+                </div>
+                <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
             </div>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
             <div class="closedView">
                 <h3>Address Details</h3>
             </div>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView2">
             <div class="title">
                 <h3>Customer Details</h3>
@@ -106,7 +102,7 @@
                     </div>
                 </div>
             </div>
-    
+   
             <div class="homeAddress">
                 <div class="type">
                     <input type="radio">
@@ -121,10 +117,10 @@
                     </span>
                 </div>
             </div>
-    
+   
             <button class="continueBtn" (click)="changeOrderSummaryVisibility()">CONTINUE</button>
         </div>
-    
+   
         <div class="container2" *ngIf="addressView3">
             <div class="title">
                 <h3>Customer Details</h3>
@@ -160,7 +156,7 @@
                 </div>
             </div>
         </div>
-    
+   
         <div class="container3" *ngIf="!IsOrderSummaryVisible" (click)="changeOrderSummaryVisibility()">
             <div class="closedView">
                 <h3>Order Summary</h3>
@@ -188,9 +184,7 @@
                 <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
             </div>
         </div>
-    </div>
- </div>    
+    </div>    
 </div>
-
-<app-footer></app-footer>
-<router-outlet></router-outlet>
+ 
+ 

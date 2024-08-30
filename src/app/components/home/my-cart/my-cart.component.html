@@ -1,172 +1,191 @@
-<div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
+<div *ngIf="isLoggedIn()">
+    <div class="main-container">
+      <div class="msg-container">
+        <div>
+          <span class="topmsg">PLEASE LOG IN</span>
+        </div>
+        <div class="msg">
+          <span class="loginViewmsg">Login to view items in your wishlist.</span>
+        </div>
+      </div>
+      <div class="imgdiv">
+        <img src="../../../../assets/wishlistlogin.png" alt="" />
+      </div>
+      <div class="btn-container">
+        <div class="btn">
+          <button [routerLink]="['/loginSignup']">LOGIN/SIGNUP</button>
+        </div>
+      </div>
+    </div>
 </div>
-<div class="myCart">
-    <div class="container1">
 
-        <div class="title">
-            <h2>My Cart ({{cartItems.length}})</h2>
-            <div class="company">
-                <img src="../assets/myCart/location.svg" alt="location">
-                Use Current Location
-            </div>
-        </div>
-        <div class="content" *ngFor="let item of cartItems">
-            <div class="bookImg">
-                <img src="../assets/myCart/Book2.png" alt="book1">
-            </div>
-            <div class="aboutBook">
-                <div class="bookTitle">
-                    <!-- Don't Make Me Think -->
-                    {{item.product_id.bookName}}
-                </div>
-                <div class="author">
-                    <!-- by Steve King -->
-                    {{item.product_id.author}}
-                </div>
-                <div class="price">
-                    <!-- RS.1500 -->
-                    Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
-                </div>
-                <div class="buttons">
-                    <button class="minusBtn" (click)="decreaseQuantity(item)">-</button>
-                    <button class="countBtn">{{item.quantityToBuy}}</button>
-                    <button class="plusBtn" (click)="increaseQuantity(item)">+</button>
-                    <button class="removeBtn" (click)="deleteFromMyCart(item)">Remove</button>
-                </div>
-            </div>
-            <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
-        </div>
+<div *ngIf="!isLoggedIn()">
+    <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Cart</span>
     </div>
-
-    <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
-        <div class="closedView">
-            <h3>Address Details</h3>
-        </div>
-    </div>
-
-    <div class="container2" *ngIf="addressView2">
-        <div class="title">
-            <h3>Customer Details</h3>
-            <button class="addAddress">Add New Address</button>
-        </div>
-        <div class="userDetail">
-            <div class="fullName">
-                <label>Full Name</label>
-                <input type="text">
-            </div>
-            <div class="mobileNo">
-                <label>Mobile Number</label>
-                <input type="number">
-            </div>
-        </div>
-        <div class="workAddress">
-            <div class="type">
-                <input type="radio">
-                <label for="">1.WORK</label>
-                <button class="editBtn">Edit</button>
-            </div>
-            <div class="addressInp">
-                <label for="">Address</label>
-                <textarea name="" id=""
-                    placeholder="BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross, Sector 4, Opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore"></textarea>
-            </div>
-            <div class="regionInp">
-                <div class="cityInp">
-                    <label for="">city/town</label>
-                    <input type="text" name="" id="" placeholder="Bengaluru">
-                </div>
-                <div class="stateInp">
-                    <label for="">State</label>
-                    <input type="text" name="" id="" placeholder="Karnataka">
+    <div class="myCart">
+        <div class="container1">
+            <div class="title">
+                <h2>My Cart ({{cartItems.length}})</h2>
+                <div class="company">
+                    <img src="../assets/myCart/location.svg" alt="location">
+                    Use Current Location
                 </div>
             </div>
-        </div>
-
-        <div class="homeAddress">
-            <div class="type">
-                <input type="radio">
-                <label for="">2.HOME</label>
-            </div>
-            <div class="addressInp">
-                <label for="">Address</label>
-                <span>
-                    BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross,
-                    Sector 4, Opp to BDA complex, near Kumarakom restaurant,
-                    HSR Layout, Bangalore
-                </span>
-            </div>
-        </div>
-
-        <button class="continueBtn" (click)="changeOrderSummaryVisibility()">CONTINUE</button>
-    </div>
-
-    <div class="container2" *ngIf="addressView3">
-        <div class="title">
-            <h3>Customer Details</h3>
-        </div>
-        <div class="userDetail">
-            <div class="fullName">
-                <label>Full Name</label>
-                <input type="text" placeholder="Poonam Yadav">
-            </div>
-            <div class="mobileNo">
-                <label>Mobile Number</label>
-                <input type="text" placeholder="8156782267">
-            </div>
-        </div>
-        <div class="workAddress">
-            <div class="type">
-                <label for="">1.WORK</label>
-            </div>
-            <div class="addressInp">
-                <label for="">Address</label>
-                <textarea style="background-color: white;" id=""
-                    placeholder="BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross, Sector 4, Opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore"></textarea>
-            </div>
-            <div class="regionInp">
-                <div class="cityInp">
-                    <label for="">city/town</label>
-                    <input style="background-color: white;" type="text" name="" id="" placeholder="Bengaluru">
+            <div class="content" *ngFor="let item of cartItems">
+                <div class="bookImg">
+                    <img src="../assets/myCart/Book2.png" alt="book1">
                 </div>
-                <div class="stateInp">
-                    <label for="">State</label>
-                    <input style="background-color: white;" type="text" name="" id="" placeholder="Karnataka">
+                <div class="aboutBook">
+                    <div class="bookTitle">
+                        <!-- Don't Make Me Think -->
+                        {{item.product_id.bookName}}
+                    </div>
+                    <div class="author">
+                        <!-- by Steve King -->
+                        {{item.product_id.author}}
+                    </div>
+                    <div class="price">
+                        <!-- RS.1500 -->
+                        Rs.{{item.product_id.discountPrice}} <s>Rs.{{item.product_id.price}}</s>
+                    </div>
+                    <div class="buttons">
+                        <button class="minusBtn" (click)="decreaseQuantity(item)">-</button>
+                        <button class="countBtn">{{item.quantityToBuy}}</button>
+                        <button class="plusBtn" (click)="increaseQuantity(item)">+</button>
+                        <button class="removeBtn" (click)="deleteFromMyCart(item)">Remove</button>
+                    </div>
+                </div>
+                <button class="placeOrderBtn" (click)="placeOrder(item)">PLACE ORDER</button>
+            </div>
+        </div>
+    
+        <div class="container2" *ngIf="addressView1" (click)="changeAddressDetailsVisibility()">
+            <div class="closedView">
+                <h3>Address Details</h3>
+            </div>
+        </div>
+    
+        <div class="container2" *ngIf="addressView2">
+            <div class="title">
+                <h3>Customer Details</h3>
+                <button class="addAddress">Add New Address</button>
+            </div>
+            <div class="userDetail">
+                <div class="fullName">
+                    <label>Full Name</label>
+                    <input type="text">
+                </div>
+                <div class="mobileNo">
+                    <label>Mobile Number</label>
+                    <input type="number">
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container3" *ngIf="!IsOrderSummaryVisible" (click)="changeOrderSummaryVisibility()">
-        <div class="closedView">
-            <h3>Order Summary</h3>
-        </div>
-    </div>
-    <div class="container3" *ngIf="IsOrderSummaryVisible">
-        <div class="content">
-            <div class="bookImg">
-                <img src="../assets/myCart/Book2.png" alt="book1">
-            </div>
-            <div class="aboutBook">
-                <div class="bookTitle">
-                    <!-- Don't Make Me Think -->
-                    {{itemSelectedForPlacingOrder.product_id.bookName}}
+            <div class="workAddress">
+                <div class="type">
+                    <input type="radio">
+                    <label for="">1.WORK</label>
+                    <button class="editBtn">Edit</button>
                 </div>
-                <div class="author">
-                    <!-- by Steve King -->
-                    {{itemSelectedForPlacingOrder.product_id.author}}
+                <div class="addressInp">
+                    <label for="">Address</label>
+                    <textarea name="" id=""
+                        placeholder="BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross, Sector 4, Opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore"></textarea>
                 </div>
-                <div class="price">
-                    <!-- RS.1500 -->
-                    Rs.{{itemSelectedForPlacingOrder.product_id.discountPrice}}<s>Rs.{{itemSelectedForPlacingOrder.product_id.price}}</s>
+                <div class="regionInp">
+                    <div class="cityInp">
+                        <label for="">city/town</label>
+                        <input type="text" name="" id="" placeholder="Bengaluru">
+                    </div>
+                    <div class="stateInp">
+                        <label for="">State</label>
+                        <input type="text" name="" id="" placeholder="Karnataka">
+                    </div>
                 </div>
             </div>
-            <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
+    
+            <div class="homeAddress">
+                <div class="type">
+                    <input type="radio">
+                    <label for="">2.HOME</label>
+                </div>
+                <div class="addressInp">
+                    <label for="">Address</label>
+                    <span>
+                        BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross,
+                        Sector 4, Opp to BDA complex, near Kumarakom restaurant,
+                        HSR Layout, Bangalore
+                    </span>
+                </div>
+            </div>
+    
+            <button class="continueBtn" (click)="changeOrderSummaryVisibility()">CONTINUE</button>
         </div>
-    </div>
+    
+        <div class="container2" *ngIf="addressView3">
+            <div class="title">
+                <h3>Customer Details</h3>
+            </div>
+            <div class="userDetail">
+                <div class="fullName">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Poonam Yadav">
+                </div>
+                <div class="mobileNo">
+                    <label>Mobile Number</label>
+                    <input type="text" placeholder="8156782267">
+                </div>
+            </div>
+            <div class="workAddress">
+                <div class="type">
+                    <label for="">1.WORK</label>
+                </div>
+                <div class="addressInp">
+                    <label for="">Address</label>
+                    <textarea style="background-color: white;" id=""
+                        placeholder="BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross, Sector 4, Opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore"></textarea>
+                </div>
+                <div class="regionInp">
+                    <div class="cityInp">
+                        <label for="">city/town</label>
+                        <input style="background-color: white;" type="text" name="" id="" placeholder="Bengaluru">
+                    </div>
+                    <div class="stateInp">
+                        <label for="">State</label>
+                        <input style="background-color: white;" type="text" name="" id="" placeholder="Karnataka">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container3" *ngIf="!IsOrderSummaryVisible" (click)="changeOrderSummaryVisibility()">
+            <div class="closedView">
+                <h3>Order Summary</h3>
+            </div>
+        </div>
+        <div class="container3" *ngIf="IsOrderSummaryVisible">
+            <div class="content">
+                <div class="bookImg">
+                    <img src="../assets/myCart/Book2.png" alt="book1">
+                </div>
+                <div class="aboutBook">
+                    <div class="bookTitle">
+                        <!-- Don't Make Me Think -->
+                        {{itemSelectedForPlacingOrder.product_id.bookName}}
+                    </div>
+                    <div class="author">
+                        <!-- by Steve King -->
+                        {{itemSelectedForPlacingOrder.product_id.author}}
+                    </div>
+                    <div class="price">
+                        <!-- RS.1500 -->
+                        Rs.{{itemSelectedForPlacingOrder.product_id.discountPrice}}<s>Rs.{{itemSelectedForPlacingOrder.product_id.price}}</s>
+                    </div>
+                </div>
+                <button class="continueBtn" (click)="checkout()">CHECKOUT</button>
+            </div>
+        </div>
+    </div>    
 </div>
 
 <app-footer></app-footer>
-
-
-
 <router-outlet></router-outlet>

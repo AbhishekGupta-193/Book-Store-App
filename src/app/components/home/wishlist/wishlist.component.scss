@@ -172,7 +172,6 @@ button{
 //LATEST STYLINGS
 
 .wishListHeading{
-    margin-top: 20px;
     margin-left: 10%;
     font-size: 20px;
     font-weight: bold;
@@ -244,6 +243,10 @@ mat-icon{
     margin-left: 600px;
 }
  
+
+::ng-deep .wishListHeading[_ngcontent-ng-c429165868] {
+  margin-top: 0 !important;
+}
    
 
 

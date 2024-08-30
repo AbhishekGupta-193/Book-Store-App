@@ -1,7 +1,7 @@
 
 <div class="nav"><span [routerLink]="['/header']" class="back">Home</span> / <span class="current">My Order</span>
 </div>
-<div class="book-list" *ngIf="isLoggedIn()">
+<div class="book-list" *ngIf="isLoggedIn==false">
  <div class="loginlogoutDiv">
   <div class="main-container">
     <div class="msg-container">
@@ -26,7 +26,7 @@
   <!-- ORDERS DATA FROM LOCALSTORAGE -->
    </div>
 
- <div *ngIf="!isLoggedIn()" class="mainOrderDiv">
+ <div *ngIf="isLoggedIn==true" class="mainOrderDiv">
   <div *ngFor="let order of myOrders">
     <mat-card class="book-card" >
       <div style="display: flex; justify-content: space-between;">
@@ -54,5 +54,4 @@
     </mat-card>
   </div>
  </div>
- <app-footer class="footerPosition"></app-footer>
-<router-outlet></router-outlet> 
+
